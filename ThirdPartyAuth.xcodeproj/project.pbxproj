@@ -23,6 +23,7 @@
 		B285D5F629F2D08600B86937 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5F529F2D08600B86937 /* Colors.swift */; };
 		B285D5F829F2D08F00B86937 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B285D5F729F2D08F00B86937 /* Colors.xcassets */; };
 		B285D5FA29F2D09C00B86937 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B285D5F929F2D09C00B86937 /* Images.xcassets */; };
+		B285D5FE29F2D33200B86937 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5FD29F2D33200B86937 /* Assets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		B285D5F529F2D08600B86937 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B285D5F729F2D08F00B86937 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		B285D5F929F2D09C00B86937 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B285D5FD29F2D33200B86937 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 		B285D5F429F2D07900B86937 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B285D5FD29F2D33200B86937 /* Assets.swift */,
 				B285D5F929F2D09C00B86937 /* Images.xcassets */,
 			);
 			path = Images;
@@ -243,9 +246,11 @@
 			buildConfigurationList = B285D5CC29F2CE7E00B86937 /* Build configuration list for PBXNativeTarget "ThirdPartyAuth" */;
 			buildPhases = (
 				B285D5B529F2CE7D00B86937 /* Headers */,
+				B285D5FC29F2D28200B86937 /* SwiftGen */,
 				B285D5B629F2CE7D00B86937 /* Sources */,
 				B285D5B729F2CE7D00B86937 /* Frameworks */,
 				B285D5B829F2CE7D00B86937 /* Resources */,
+				B285D5FB29F2D22500B86937 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -331,6 +336,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B285D5FB29F2D22500B86937 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/BuildTools/swiftlint_0_47_1\" --config ${SRCROOT}/.swiftlint.yml\n";
+		};
+		B285D5FC29F2D28200B86937 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/BuildTools/swiftgen\" config run --config ${SRCROOT}/.swiftgen.yml\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B285D5B629F2CE7D00B86937 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -344,6 +389,7 @@
 				B285D5E329F2CFF300B86937 /* ThirdPartyAuthUserModel.swift in Sources */,
 				B285D5EF29F2D04C00B86937 /* ThirdPartyAuthContainer.swift in Sources */,
 				B285D5E129F2CFEA00B86937 /* ThirdPartyAuthType.swift in Sources */,
+				B285D5FE29F2D33200B86937 /* Assets.swift in Sources */,
 				B285D5ED29F2D04000B86937 /* ThirdPartyAuthButton.swift in Sources */,
 				B285D5D629F2CF8400B86937 /* AppleAuthProvider.swift in Sources */,
 				B285D5D829F2CF9000B86937 /* AppleCredentialsService.swift in Sources */,

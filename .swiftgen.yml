@@ -1,0 +1,10 @@
+xcassets:
+  inputs:
+    - ThirdPartyAuth/Resources/Colors/Colors.xcassets
+    - ThirdPartyAuth/Resources/Images/Images.xcassets
+  outputs:
+    templateName: swift5
+    output: ThirdPartyAuth/Resources/Images/Assets.swift
+    params:
+        enumName: Styles
+        publicAccess: false
