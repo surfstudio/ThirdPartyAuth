@@ -5,4 +5,6 @@
 //  Created by Ilya Klimenyuk on 21.04.2023.
 //
 
-import Foundation
+protocol BaseCredentialsService {
+    func checkCredentialsState(for userID: String, _ onCheckCredentialsValid: @escaping (Bool) -> Void)
+}
