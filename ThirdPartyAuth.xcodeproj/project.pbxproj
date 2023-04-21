@@ -9,7 +9,20 @@
 /* Begin PBXBuildFile section */
 		B285D5C329F2CE7E00B86937 /* ThirdPartyAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B285D5BA29F2CE7D00B86937 /* ThirdPartyAuth.framework */; };
 		B285D5C829F2CE7E00B86937 /* ThirdPartyAuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5C729F2CE7E00B86937 /* ThirdPartyAuthTests.swift */; };
-		B285D5C929F2CE7E00B86937 /* ThirdPartyAuth.h in Headers */ = {isa = PBXBuildFile; fileRef = B285D5BD29F2CE7D00B86937 /* ThirdPartyAuth.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B285D5D629F2CF8400B86937 /* AppleAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5D529F2CF8400B86937 /* AppleAuthProvider.swift */; };
+		B285D5D829F2CF9000B86937 /* AppleCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5D729F2CF9000B86937 /* AppleCredentialsService.swift */; };
+		B285D5DC29F2CFC100B86937 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5DB29F2CFC100B86937 /* UIImage.swift */; };
+		B285D5DE29F2CFCB00B86937 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5DD29F2CFCB00B86937 /* UIStackView.swift */; };
+		B285D5E129F2CFEA00B86937 /* ThirdPartyAuthType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5E029F2CFEA00B86937 /* ThirdPartyAuthType.swift */; };
+		B285D5E329F2CFF300B86937 /* ThirdPartyAuthUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5E229F2CFF300B86937 /* ThirdPartyAuthUserModel.swift */; };
+		B285D5E929F2D02600B86937 /* BaseAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5E829F2D02600B86937 /* BaseAuthProvider.swift */; };
+		B285D5EB29F2D03400B86937 /* BaseCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5EA29F2D03400B86937 /* BaseCredentialsService.swift */; };
+		B285D5ED29F2D04000B86937 /* ThirdPartyAuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5EC29F2D04000B86937 /* ThirdPartyAuthButton.swift */; };
+		B285D5EF29F2D04C00B86937 /* ThirdPartyAuthContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5EE29F2D04C00B86937 /* ThirdPartyAuthContainer.swift */; };
+		B285D5F129F2D05800B86937 /* ThirdPartyAuthContainerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5F029F2D05800B86937 /* ThirdPartyAuthContainerModel.swift */; };
+		B285D5F629F2D08600B86937 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5F529F2D08600B86937 /* Colors.swift */; };
+		B285D5F829F2D08F00B86937 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B285D5F729F2D08F00B86937 /* Colors.xcassets */; };
+		B285D5FA29F2D09C00B86937 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B285D5F929F2D09C00B86937 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,9 +37,22 @@
 
 /* Begin PBXFileReference section */
 		B285D5BA29F2CE7D00B86937 /* ThirdPartyAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThirdPartyAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B285D5BD29F2CE7D00B86937 /* ThirdPartyAuth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdPartyAuth.h; sourceTree = "<group>"; };
 		B285D5C229F2CE7E00B86937 /* ThirdPartyAuthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThirdPartyAuthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B285D5C729F2CE7E00B86937 /* ThirdPartyAuthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyAuthTests.swift; sourceTree = "<group>"; };
+		B285D5D529F2CF8400B86937 /* AppleAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthProvider.swift; sourceTree = "<group>"; };
+		B285D5D729F2CF9000B86937 /* AppleCredentialsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleCredentialsService.swift; sourceTree = "<group>"; };
+		B285D5DB29F2CFC100B86937 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		B285D5DD29F2CFCB00B86937 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
+		B285D5E029F2CFEA00B86937 /* ThirdPartyAuthType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyAuthType.swift; sourceTree = "<group>"; };
+		B285D5E229F2CFF300B86937 /* ThirdPartyAuthUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyAuthUserModel.swift; sourceTree = "<group>"; };
+		B285D5E829F2D02600B86937 /* BaseAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAuthProvider.swift; sourceTree = "<group>"; };
+		B285D5EA29F2D03400B86937 /* BaseCredentialsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCredentialsService.swift; sourceTree = "<group>"; };
+		B285D5EC29F2D04000B86937 /* ThirdPartyAuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyAuthButton.swift; sourceTree = "<group>"; };
+		B285D5EE29F2D04C00B86937 /* ThirdPartyAuthContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyAuthContainer.swift; sourceTree = "<group>"; };
+		B285D5F029F2D05800B86937 /* ThirdPartyAuthContainerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyAuthContainerModel.swift; sourceTree = "<group>"; };
+		B285D5F529F2D08600B86937 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B285D5F729F2D08F00B86937 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		B285D5F929F2D09C00B86937 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +95,9 @@
 		B285D5BC29F2CE7D00B86937 /* ThirdPartyAuth */ = {
 			isa = PBXGroup;
 			children = (
-				B285D5BD29F2CE7D00B86937 /* ThirdPartyAuth.h */,
+				B285D5D229F2CF6000B86937 /* Apple */,
+				B285D5D929F2CFAD00B86937 /* Common */,
+				B285D5F229F2D06500B86937 /* Resources */,
 			);
 			path = ThirdPartyAuth;
 			sourceTree = "<group>";
@@ -82,6 +110,121 @@
 			path = ThirdPartyAuthTests;
 			sourceTree = "<group>";
 		};
+		B285D5D229F2CF6000B86937 /* Apple */ = {
+			isa = PBXGroup;
+			children = (
+				B285D5D329F2CF6900B86937 /* Providers */,
+				B285D5D429F2CF7200B86937 /* Services */,
+			);
+			path = Apple;
+			sourceTree = "<group>";
+		};
+		B285D5D329F2CF6900B86937 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				B285D5D529F2CF8400B86937 /* AppleAuthProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		B285D5D429F2CF7200B86937 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B285D5D729F2CF9000B86937 /* AppleCredentialsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B285D5D929F2CFAD00B86937 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B285D5DA29F2CFB400B86937 /* Extensions */,
+				B285D5DF29F2CFD500B86937 /* Models */,
+				B285D5E429F2CFFF00B86937 /* Protocols */,
+				B285D5E529F2D00800B86937 /* Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B285D5DA29F2CFB400B86937 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B285D5DB29F2CFC100B86937 /* UIImage.swift */,
+				B285D5DD29F2CFCB00B86937 /* UIStackView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B285D5DF29F2CFD500B86937 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B285D5E029F2CFEA00B86937 /* ThirdPartyAuthType.swift */,
+				B285D5E229F2CFF300B86937 /* ThirdPartyAuthUserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B285D5E429F2CFFF00B86937 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B285D5E829F2D02600B86937 /* BaseAuthProvider.swift */,
+				B285D5EA29F2D03400B86937 /* BaseCredentialsService.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B285D5E529F2D00800B86937 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B285D5E629F2D00D00B86937 /* Button */,
+				B285D5E729F2D01100B86937 /* Container */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B285D5E629F2D00D00B86937 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				B285D5EC29F2D04000B86937 /* ThirdPartyAuthButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		B285D5E729F2D01100B86937 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				B285D5EE29F2D04C00B86937 /* ThirdPartyAuthContainer.swift */,
+				B285D5F029F2D05800B86937 /* ThirdPartyAuthContainerModel.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		B285D5F229F2D06500B86937 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B285D5F329F2D07400B86937 /* Colors */,
+				B285D5F429F2D07900B86937 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B285D5F329F2D07400B86937 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				B285D5F529F2D08600B86937 /* Colors.swift */,
+				B285D5F729F2D08F00B86937 /* Colors.xcassets */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		B285D5F429F2D07900B86937 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B285D5F929F2D09C00B86937 /* Images.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -89,7 +232,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B285D5C929F2CE7E00B86937 /* ThirdPartyAuth.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +286,7 @@
 				TargetAttributes = {
 					B285D5B929F2CE7D00B86937 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 					B285D5C129F2CE7E00B86937 = {
 						CreatedOnToolsVersion = 14.2;
@@ -174,6 +317,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B285D5F829F2D08F00B86937 /* Colors.xcassets in Resources */,
+				B285D5FA29F2D09C00B86937 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +336,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B285D5DC29F2CFC100B86937 /* UIImage.swift in Sources */,
+				B285D5F629F2D08600B86937 /* Colors.swift in Sources */,
+				B285D5EB29F2D03400B86937 /* BaseCredentialsService.swift in Sources */,
+				B285D5E929F2D02600B86937 /* BaseAuthProvider.swift in Sources */,
+				B285D5F129F2D05800B86937 /* ThirdPartyAuthContainerModel.swift in Sources */,
+				B285D5E329F2CFF300B86937 /* ThirdPartyAuthUserModel.swift in Sources */,
+				B285D5EF29F2D04C00B86937 /* ThirdPartyAuthContainer.swift in Sources */,
+				B285D5E129F2CFEA00B86937 /* ThirdPartyAuthType.swift in Sources */,
+				B285D5ED29F2D04000B86937 /* ThirdPartyAuthButton.swift in Sources */,
+				B285D5D629F2CF8400B86937 /* AppleAuthProvider.swift in Sources */,
+				B285D5D829F2CF9000B86937 /* AppleCredentialsService.swift in Sources */,
+				B285D5DE29F2CFCB00B86937 /* UIStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +421,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -319,6 +477,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -331,6 +490,7 @@
 		B285D5CD29F2CE7E00B86937 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -341,7 +501,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
@@ -356,8 +516,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -366,6 +529,7 @@
 		B285D5CE29F2CE7E00B86937 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -376,7 +540,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
@@ -391,7 +555,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -401,17 +567,20 @@
 		B285D5D029F2CE7E00B86937 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7C23CBT2F7;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.admiralbizon.ThirdPartyAuthTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -421,17 +590,20 @@
 		B285D5D129F2CE7E00B86937 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7C23CBT2F7;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.admiralbizon.ThirdPartyAuthTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
