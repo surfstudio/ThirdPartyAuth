@@ -24,6 +24,7 @@
 		B285D5F829F2D08F00B86937 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B285D5F729F2D08F00B86937 /* Colors.xcassets */; };
 		B285D5FA29F2D09C00B86937 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B285D5F929F2D09C00B86937 /* Images.xcassets */; };
 		B285D5FE29F2D33200B86937 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5FD29F2D33200B86937 /* Assets.swift */; };
+		B2BA852E29F3C79200F4B915 /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = B2BA852D29F3C79200F4B915 /* Utils */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2BA852E29F3C79200F4B915 /* Utils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +259,9 @@
 			dependencies = (
 			);
 			name = ThirdPartyAuth;
+			packageProductDependencies = (
+				B2BA852D29F3C79200F4B915 /* Utils */,
+			);
 			productName = ThirdPartyAuth;
 			productReference = B285D5BA29F2CE7D00B86937 /* ThirdPartyAuth.framework */;
 			productType = "com.apple.product-type.framework";
@@ -307,6 +312,9 @@
 				Base,
 			);
 			mainGroup = B285D5B029F2CE7D00B86937;
+			packageReferences = (
+				B2BA852C29F3C79200F4B915 /* XCRemoteSwiftPackageReference "iOS-Utils" */,
+			);
 			productRefGroup = B285D5BB29F2CE7D00B86937 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -687,6 +695,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B2BA852C29F3C79200F4B915 /* XCRemoteSwiftPackageReference "iOS-Utils" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/surfstudio/iOS-Utils";
+			requirement = {
+				kind = exactVersion;
+				version = 13.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B2BA852D29F3C79200F4B915 /* Utils */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2BA852C29F3C79200F4B915 /* XCRemoteSwiftPackageReference "iOS-Utils" */;
+			productName = Utils;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B285D5B129F2CE7D00B86937 /* Project object */;
 }
