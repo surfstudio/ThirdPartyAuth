@@ -25,6 +25,8 @@
 		B285D5FA29F2D09C00B86937 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B285D5F929F2D09C00B86937 /* Images.xcassets */; };
 		B285D5FE29F2D33200B86937 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5FD29F2D33200B86937 /* Assets.swift */; };
 		B2BA852E29F3C79200F4B915 /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = B2BA852D29F3C79200F4B915 /* Utils */; };
+		B2BA853229F3CDA100F4B915 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2BA853429F3CDA100F4B915 /* Localizable.strings */; };
+		B2BA853729F3D01D00F4B915 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA853629F3D01D00F4B915 /* Strings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,9 @@
 		B285D5F729F2D08F00B86937 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		B285D5F929F2D09C00B86937 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B285D5FD29F2D33200B86937 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		B2BA853329F3CDA100F4B915 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B2BA853529F3CDBA00F4B915 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B2BA853629F3D01D00F4B915 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +213,7 @@
 			children = (
 				B285D5F329F2D07400B86937 /* Colors */,
 				B285D5F429F2D07900B86937 /* Images */,
+				B2BA852F29F3CD6E00F4B915 /* Strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -228,6 +234,15 @@
 				B285D5F929F2D09C00B86937 /* Images.xcassets */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		B2BA852F29F3CD6E00F4B915 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				B2BA853429F3CDA100F4B915 /* Localizable.strings */,
+				B2BA853629F3D01D00F4B915 /* Strings.swift */,
+			);
+			path = Strings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +325,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = B285D5B029F2CE7D00B86937;
 			packageReferences = (
@@ -331,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B285D5F829F2D08F00B86937 /* Colors.xcassets in Resources */,
+				B2BA853229F3CDA100F4B915 /* Localizable.strings in Resources */,
 				B285D5FA29F2D09C00B86937 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,6 +412,7 @@
 				B285D5E929F2D02600B86937 /* BaseAuthProvider.swift in Sources */,
 				B285D5F129F2D05800B86937 /* ThirdPartyAuthContainerModel.swift in Sources */,
 				B285D5E329F2CFF300B86937 /* ThirdPartyAuthUserModel.swift in Sources */,
+				B2BA853729F3D01D00F4B915 /* Strings.swift in Sources */,
 				B285D5EF29F2D04C00B86937 /* ThirdPartyAuthContainer.swift in Sources */,
 				B285D5E129F2CFEA00B86937 /* ThirdPartyAuthType.swift in Sources */,
 				B285D5FE29F2D33200B86937 /* Assets.swift in Sources */,
@@ -422,6 +440,18 @@
 			targetProxy = B285D5C429F2CE7E00B86937 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B2BA853429F3CDA100F4B915 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2BA853329F3CDA100F4B915 /* en */,
+				B2BA853529F3CDBA00F4B915 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B285D5CA29F2CE7E00B86937 /* Debug */ = {

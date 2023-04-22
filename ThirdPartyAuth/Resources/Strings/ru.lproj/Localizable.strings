@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  ThirdPartyAuth
+
+  Created by Ilya Klimenyuk on 22.04.2023.
+  
+*/
+
+// MARK: - Login
+
+"Login.title" = "Или";

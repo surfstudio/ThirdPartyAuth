@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "ThirdPartyAuth",
+    defaultLocalization: "en",
     platforms: [.iOS(.v13)],
     products: [
         .library(

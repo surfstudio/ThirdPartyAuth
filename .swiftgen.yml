@@ -8,3 +8,12 @@ xcassets:
     params:
         enumName: Styles
         publicAccess: false
+
+strings:
+  inputs:
+    - ThirdPartyAuth/Resources/Strings/en.lproj
+  outputs:
+    templateName: structured-swift5
+    output: ThirdPartyAuth/Resources/Strings/Strings.swift
+    params:
+        publicAccess: false
