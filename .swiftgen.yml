@@ -9,6 +9,15 @@ xcassets:
         enumName: Styles
         publicAccess: false
 
+fonts:
+  inputs:
+    - ThirdPartyAuth/Resources/Fonts/FontsList
+  outputs:
+    templateName: swift5
+    output: ThirdPartyAuth/Resources/Fonts/Fonts.swift
+    params:
+        publicAccess: false
+
 strings:
   inputs:
     - ThirdPartyAuth/Resources/Strings/en.lproj

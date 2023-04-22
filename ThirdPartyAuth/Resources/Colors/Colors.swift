@@ -10,13 +10,21 @@ import UIKit
 enum Colors {
 
     enum Buttons {
-        static let border = Styles.Colors.border.color
-        static let highlightedBackground = Styles.Colors.highlightedBackground.color
-        static let normalBackground = Styles.Colors.normalBackground.color
+        static let border = Styles.Colors.Buttons.border.color
+        static let highlightedBackground = Styles.Colors.Buttons.highlightedBackground.color
+        static let normalBackground = Styles.Colors.Buttons.normalBackground.color
     }
 
     enum Loader {
-        static let tint = Styles.Colors.tint.color
+        static let tint = Styles.Colors.Loader.tint.color
+    }
+
+    enum Main {
+        static let separator = Styles.Colors.Main.separator.color
+    }
+
+    enum Text {
+        static let plain = Styles.Colors.Text.plain.color
     }
 
 }
