@@ -6,25 +6,15 @@
 //
 
 import UIKit
+import Utils
 
-final class ThirdPartyAuthButton: UIButton {
-
-    // MARK: - Properties
-
-    var cornerRadius: CGFloat {
-        get {
-            return layer.cornerRadius
-        }
-        set {
-            configureCorners(cornerRadius: newValue)
-        }
-    }
+final class ThirdPartyAuthButton: CommonButton {
 
     // MARK: - Private Properties
 
-    private let authType: ThirdPartyAuthType
     private weak var indicator: UIActivityIndicatorView?
     private var isLoading: Bool = false
+    private let authType: ThirdPartyAuthType
 
     // MARK: - Initialization
 
@@ -80,11 +70,11 @@ private extension ThirdPartyAuthButton {
     func setImage() {
         switch authType {
         case .apple:
-            setImageForAllState(Styles.Images.apple.image)
+            setImageForAllState(Styles.Images.Icons.apple.image)
         case .google:
-            setImageForAllState(Styles.Images.google.image)
+            setImageForAllState(Styles.Images.Icons.google.image)
         case .vk:
-            setImageForAllState(Styles.Images.vk.image)
+            setImageForAllState(Styles.Images.Icons.vk.image)
         }
     }
 
@@ -108,29 +98,6 @@ private extension ThirdPartyAuthButton {
         self.indicator = indicator
 
         indicator.isHidden = true
-    }
-
-    func configureCorners(cornerRadius: CGFloat) {
-        layer.cornerRadius = cornerRadius
-        layer.masksToBounds = cornerRadius > 0
-    }
-
-    func set(backgroundColor: UIColor, for states: [UIControl.State]) {
-        states.forEach { setBackgroundImage(UIImage(color: backgroundColor), for: $0) }
-    }
-
-    func setTitleForAllState(_ title: String?) {
-        setTitle(title, for: .normal)
-        setTitle(title, for: .disabled)
-        setTitle(title, for: .highlighted)
-        setTitle(title, for: .selected)
-    }
-
-    func setImageForAllState(_ image: UIImage?) {
-        setImage(image, for: .normal)
-        setImage(image, for: .disabled)
-        setImage(image, for: .highlighted)
-        setImage(image, for: .selected)
     }
 
 }

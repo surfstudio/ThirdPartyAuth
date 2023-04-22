@@ -1,5 +1,5 @@
 //
-//  ThirdPartyAuthContainer.swift
+//  ThirdPartyAuthButtonContainer.swift
 //  ThirdPartyAuth
 //
 //  Created by Ilya Klimenyuk on 21.04.2023.
@@ -8,7 +8,7 @@
 import UIKit
 import AuthenticationServices
 
-public final class ThirdPartyAuthContainer: UIView {
+public final class ThirdPartyAuthButtonContainer: UIView {
 
     // MARK: - Public Properties
 
@@ -43,7 +43,7 @@ public final class ThirdPartyAuthContainer: UIView {
 
     // MARK: - Public Methods
 
-    public func configure(with model: ThirdPartyAuthContainerModel) {
+    public func configure(with model: ThirdPartyAuthButtonContainerModel) {
         self.authTypes = model.authTypes
         self.buttonsCornerRadius = model.buttonsCornerRadius
         self.buttonWidth = model.buttonWidth
@@ -55,7 +55,7 @@ public final class ThirdPartyAuthContainer: UIView {
 
 // MARK: - Private Methods
 
-private extension ThirdPartyAuthContainer {
+private extension ThirdPartyAuthButtonContainer {
 
     func configureAppearance() {
         backgroundColor = .clear
@@ -131,7 +131,7 @@ private extension ThirdPartyAuthContainer {
 
 // MARK: - Actions
 
-private extension ThirdPartyAuthContainer {
+private extension ThirdPartyAuthButtonContainer {
 
     @objc
     func onAppleAuthButtonTap() {
