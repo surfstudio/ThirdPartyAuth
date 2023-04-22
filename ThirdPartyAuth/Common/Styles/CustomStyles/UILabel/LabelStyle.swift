@@ -8,7 +8,7 @@
 import UIKit
 import Utils
 
-/// Общий стиль для всех лейблов
+/// Common style for all labels
 final class LabelStyle: UIStyle<UILabel> {
 
     // MARK: - Private Properties

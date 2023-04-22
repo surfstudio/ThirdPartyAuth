@@ -10,11 +10,12 @@ import Utils
 
 extension UIStyle {
 
-    static var plainRegular: UIStyle<UILabel> {
+    static var plainRegularCenter: UIStyle<UILabel> {
         return LabelStyle(font: FontFamily.Inter.regular.font(size: 12),
                           fontColor: Colors.Text.plain,
                           lineHeight: 15.6,
-                          kern: 0)
+                          kern: 0,
+                          alignment: .center)
     }
 
 }
