@@ -5,7 +5,7 @@
 //  Created by Ilya Klimenyuk on 21.04.2023.
 //
 
-public enum ThirdPartyAuthType {
+public enum ThirdPartyAuthType: Int {
     case apple
     case google
     case vk
