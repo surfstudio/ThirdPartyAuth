@@ -8,23 +8,13 @@ let package = Package(
     defaultLocalization: "en",
     platforms: [.iOS(.v13)],
     products: [
-        .library(
-            name: "ThirdPartyAuth",
-            targets: ["ThirdPartyAuth"])
-    ],
-    dependencies: [
-        .package(
-            url: "https://github.com/surfstudio/iOS-Utils.git",
-            revision: "13.2.0"
-        )
+        .library(name: "ThirdPartyAuth", targets: ["ThirdPartyAuth"]),
+        .library(name: "ThirdPartyAuthUI", targets: ["ThirdPartyAuthUI"])
     ],
     targets: [
-        .target(
-            name: "ThirdPartyAuth",
-            dependencies: [
-                .product(name: "Utils", package: "iOS-Utils")
-            ],
-            path: "ThirdPartyAuth"
-        )
+        .target(name: "ThirdPartyAuth"),
+        .target(name: "ThirdPartyAuthUI", dependencies: ["ThirdPartyAuth"]),
+        .testTarget(name: "ThirdPartyAuthTests", dependencies: ["ThirdPartyAuth"]),
+        .testTarget(name: "ThirdPartyAuthUITests", dependencies: ["ThirdPartyAuthUI"])
     ]
 )

@@ -8,34 +8,47 @@
 
 /* Begin PBXBuildFile section */
 		B2259DFF29F92313006D9B49 /* AppleAuthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2259DFE29F92313006D9B49 /* AppleAuthHandler.swift */; };
+		B254716429F97D6600E649CF /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254716329F97D6600E649CF /* UserDataModel.swift */; };
+		B254716629F97F4900E649CF /* AppleAuthUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254716529F97F4900E649CF /* AppleAuthUserModel.swift */; };
+		B254718729F9A9B100E649CF /* ThirdPartyAuthUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B254717F29F9A9B000E649CF /* ThirdPartyAuthUI.framework */; };
+		B254718C29F9A9B100E649CF /* ThirdPartyAuthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254718B29F9A9B100E649CF /* ThirdPartyAuthUITests.swift */; };
+		B254719529F9A9D800E649CF /* ThirdPartyAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B285D5BA29F2CE7D00B86937 /* ThirdPartyAuth.framework */; };
+		B254719A29F9AD0C00E649CF /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254717629F99CAF00E649CF /* UIImage.swift */; };
+		B254719B29F9AD2300E649CF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5F529F2D08600B86937 /* Colors.swift */; };
+		B254719C29F9AD3500E649CF /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5FD29F2D33200B86937 /* Assets.swift */; };
+		B254719D29F9AD5500E649CF /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA853629F3D01D00F4B915 /* Strings.swift */; };
+		B254719E29F9AD7400E649CF /* ThirdPartyAuthButtonContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5EE29F2D04C00B86937 /* ThirdPartyAuthButtonContainer.swift */; };
+		B254719F29F9AD7B00E649CF /* ThirdPartyAuthButtonContainerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5F029F2D05800B86937 /* ThirdPartyAuthButtonContainerModel.swift */; };
+		B25471A029F9AD9600E649CF /* ThirdPartyAuthTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA853A29F3D91700F4B915 /* ThirdPartyAuthTitleView.swift */; };
+		B25471A129F9AD9C00E649CF /* ThirdPartyAuthTitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254717829F99FFA00E649CF /* ThirdPartyAuthTitleViewModel.swift */; };
+		B25471A229F9ADA200E649CF /* ThirdPartyAuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5EC29F2D04000B86937 /* ThirdPartyAuthButton.swift */; };
+		B25471A329F9ADCF00E649CF /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5DD29F2CFCB00B86937 /* UIStackView.swift */; };
+		B25471A429F9AE0500E649CF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B285D5F729F2D08F00B86937 /* Colors.xcassets */; };
+		B25471A529F9AE0B00E649CF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B285D5F929F2D09C00B86937 /* Images.xcassets */; };
+		B25471A629F9AE1000E649CF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2BA853429F3CDA100F4B915 /* Localizable.strings */; };
 		B285D5C329F2CE7E00B86937 /* ThirdPartyAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B285D5BA29F2CE7D00B86937 /* ThirdPartyAuth.framework */; };
 		B285D5C829F2CE7E00B86937 /* ThirdPartyAuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5C729F2CE7E00B86937 /* ThirdPartyAuthTests.swift */; };
 		B285D5D629F2CF8400B86937 /* AppleAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5D529F2CF8400B86937 /* AppleAuthProvider.swift */; };
-		B285D5D829F2CF9000B86937 /* AppleCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5D729F2CF9000B86937 /* AppleCredentialsService.swift */; };
-		B285D5DE29F2CFCB00B86937 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5DD29F2CFCB00B86937 /* UIStackView.swift */; };
 		B285D5E129F2CFEA00B86937 /* ThirdPartyAuthType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5E029F2CFEA00B86937 /* ThirdPartyAuthType.swift */; };
 		B285D5E329F2CFF300B86937 /* ThirdPartyAuthUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5E229F2CFF300B86937 /* ThirdPartyAuthUserModel.swift */; };
 		B285D5E929F2D02600B86937 /* BaseAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5E829F2D02600B86937 /* BaseAuthProvider.swift */; };
-		B285D5EB29F2D03400B86937 /* BaseCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5EA29F2D03400B86937 /* BaseCredentialsService.swift */; };
-		B285D5ED29F2D04000B86937 /* ThirdPartyAuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5EC29F2D04000B86937 /* ThirdPartyAuthButton.swift */; };
-		B285D5EF29F2D04C00B86937 /* ThirdPartyAuthButtonContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5EE29F2D04C00B86937 /* ThirdPartyAuthButtonContainer.swift */; };
-		B285D5F129F2D05800B86937 /* ThirdPartyAuthButtonContainerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5F029F2D05800B86937 /* ThirdPartyAuthButtonContainerModel.swift */; };
-		B285D5F629F2D08600B86937 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5F529F2D08600B86937 /* Colors.swift */; };
-		B285D5F829F2D08F00B86937 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B285D5F729F2D08F00B86937 /* Colors.xcassets */; };
-		B285D5FA29F2D09C00B86937 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B285D5F929F2D09C00B86937 /* Images.xcassets */; };
-		B285D5FE29F2D33200B86937 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5FD29F2D33200B86937 /* Assets.swift */; };
-		B2BA852E29F3C79200F4B915 /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = B2BA852D29F3C79200F4B915 /* Utils */; };
-		B2BA853229F3CDA100F4B915 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2BA853429F3CDA100F4B915 /* Localizable.strings */; };
-		B2BA853729F3D01D00F4B915 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA853629F3D01D00F4B915 /* Strings.swift */; };
-		B2BA853B29F3D91700F4B915 /* ThirdPartyAuthTitleContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA853A29F3D91700F4B915 /* ThirdPartyAuthTitleContainer.swift */; };
-		B2BA854029F3E1EF00F4B915 /* StylesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA853F29F3E1EF00F4B915 /* StylesExtension.swift */; };
-		B2BA854329F3E25E00F4B915 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA854229F3E25E00F4B915 /* UILabel.swift */; };
-		B2BA854729F3E39800F4B915 /* Inter-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B2BA854629F3E39800F4B915 /* Inter-Regular.otf */; };
-		B2BA854929F3E45C00F4B915 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA854829F3E45C00F4B915 /* Fonts.swift */; };
-		B2BA854D29F3E4B600F4B915 /* LabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA854C29F3E4B600F4B915 /* LabelStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B254718829F9A9B100E649CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B285D5B129F2CE7D00B86937 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B254717E29F9A9B000E649CF;
+			remoteInfo = ThirdPartyAuthUI;
+		};
+		B254719729F9A9D900E649CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B285D5B129F2CE7D00B86937 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B285D5B929F2CE7D00B86937;
+			remoteInfo = ThirdPartyAuth;
+		};
 		B285D5C429F2CE7E00B86937 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B285D5B129F2CE7D00B86937 /* Project object */;
@@ -47,16 +60,21 @@
 
 /* Begin PBXFileReference section */
 		B2259DFE29F92313006D9B49 /* AppleAuthHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthHandler.swift; sourceTree = "<group>"; };
+		B254716329F97D6600E649CF /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
+		B254716529F97F4900E649CF /* AppleAuthUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthUserModel.swift; sourceTree = "<group>"; };
+		B254717629F99CAF00E649CF /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		B254717829F99FFA00E649CF /* ThirdPartyAuthTitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyAuthTitleViewModel.swift; sourceTree = "<group>"; };
+		B254717F29F9A9B000E649CF /* ThirdPartyAuthUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThirdPartyAuthUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B254718629F9A9B000E649CF /* ThirdPartyAuthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThirdPartyAuthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B254718B29F9A9B100E649CF /* ThirdPartyAuthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyAuthUITests.swift; sourceTree = "<group>"; };
 		B285D5BA29F2CE7D00B86937 /* ThirdPartyAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThirdPartyAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B285D5C229F2CE7E00B86937 /* ThirdPartyAuthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThirdPartyAuthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B285D5C729F2CE7E00B86937 /* ThirdPartyAuthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyAuthTests.swift; sourceTree = "<group>"; };
 		B285D5D529F2CF8400B86937 /* AppleAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthProvider.swift; sourceTree = "<group>"; };
-		B285D5D729F2CF9000B86937 /* AppleCredentialsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleCredentialsService.swift; sourceTree = "<group>"; };
 		B285D5DD29F2CFCB00B86937 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		B285D5E029F2CFEA00B86937 /* ThirdPartyAuthType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyAuthType.swift; sourceTree = "<group>"; };
 		B285D5E229F2CFF300B86937 /* ThirdPartyAuthUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyAuthUserModel.swift; sourceTree = "<group>"; };
 		B285D5E829F2D02600B86937 /* BaseAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAuthProvider.swift; sourceTree = "<group>"; };
-		B285D5EA29F2D03400B86937 /* BaseCredentialsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCredentialsService.swift; sourceTree = "<group>"; };
 		B285D5EC29F2D04000B86937 /* ThirdPartyAuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyAuthButton.swift; sourceTree = "<group>"; };
 		B285D5EE29F2D04C00B86937 /* ThirdPartyAuthButtonContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyAuthButtonContainer.swift; sourceTree = "<group>"; };
 		B285D5F029F2D05800B86937 /* ThirdPartyAuthButtonContainerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyAuthButtonContainerModel.swift; sourceTree = "<group>"; };
@@ -67,20 +85,30 @@
 		B2BA853329F3CDA100F4B915 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B2BA853529F3CDBA00F4B915 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B2BA853629F3D01D00F4B915 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
-		B2BA853A29F3D91700F4B915 /* ThirdPartyAuthTitleContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyAuthTitleContainer.swift; sourceTree = "<group>"; };
-		B2BA853F29F3E1EF00F4B915 /* StylesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylesExtension.swift; sourceTree = "<group>"; };
-		B2BA854229F3E25E00F4B915 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
-		B2BA854629F3E39800F4B915 /* Inter-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.otf"; sourceTree = "<group>"; };
-		B2BA854829F3E45C00F4B915 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		B2BA854C29F3E4B600F4B915 /* LabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStyle.swift; sourceTree = "<group>"; };
+		B2BA853A29F3D91700F4B915 /* ThirdPartyAuthTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyAuthTitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B254717C29F9A9B000E649CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B254719529F9A9D800E649CF /* ThirdPartyAuth.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B254718329F9A9B000E649CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B254718729F9A9B100E649CF /* ThirdPartyAuthUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B285D5B729F2CE7D00B86937 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2BA852E29F3C79200F4B915 /* Utils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,12 +123,153 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B254716729F996B200E649CF /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B254716929F996E300E649CF /* ThirdPartyAuth */,
+				B254717329F99A8500E649CF /* ThirdPartyAuthUI */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B254716829F996D100E649CF /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B285D5C629F2CE7E00B86937 /* ThirdPartyAuthTests */,
+				B254718A29F9A9B100E649CF /* ThirdPartyAuthUITests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		B254716929F996E300E649CF /* ThirdPartyAuth */ = {
+			isa = PBXGroup;
+			children = (
+				B254716A29F9974300E649CF /* Flows */,
+				B254716F29F9981C00E649CF /* Library */,
+			);
+			path = ThirdPartyAuth;
+			sourceTree = "<group>";
+		};
+		B254716A29F9974300E649CF /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				B254716B29F9979000E649CF /* Apple */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		B254716B29F9979000E649CF /* Apple */ = {
+			isa = PBXGroup;
+			children = (
+				B254716C29F997B000E649CF /* Models */,
+				B254716D29F997B500E649CF /* Providers */,
+			);
+			path = Apple;
+			sourceTree = "<group>";
+		};
+		B254716C29F997B000E649CF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B254716529F97F4900E649CF /* AppleAuthUserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B254716D29F997B500E649CF /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				B254716E29F997D400E649CF /* Support */,
+				B285D5D529F2CF8400B86937 /* AppleAuthProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		B254716E29F997D400E649CF /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				B2259DFE29F92313006D9B49 /* AppleAuthHandler.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		B254716F29F9981C00E649CF /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				B254717129F9984800E649CF /* Models */,
+				B254717229F9987C00E649CF /* Protocols */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		B254717129F9984800E649CF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B285D5E029F2CFEA00B86937 /* ThirdPartyAuthType.swift */,
+				B285D5E229F2CFF300B86937 /* ThirdPartyAuthUserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B254717229F9987C00E649CF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B285D5E829F2D02600B86937 /* BaseAuthProvider.swift */,
+				B254716329F97D6600E649CF /* UserDataModel.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B254717329F99A8500E649CF /* ThirdPartyAuthUI */ = {
+			isa = PBXGroup;
+			children = (
+				B254717529F99CA100E649CF /* Extensions */,
+				B285D5F229F2D06500B86937 /* Resources */,
+				B254717429F99AC800E649CF /* Views */,
+			);
+			path = ThirdPartyAuthUI;
+			sourceTree = "<group>";
+		};
+		B254717429F99AC800E649CF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B285D5E729F2D01100B86937 /* ButtonContainer */,
+				B2BA853929F3D84300F4B915 /* TitleView */,
+				B285D5EC29F2D04000B86937 /* ThirdPartyAuthButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B254717529F99CA100E649CF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B254717629F99CAF00E649CF /* UIImage.swift */,
+				B285D5DD29F2CFCB00B86937 /* UIStackView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B254718A29F9A9B100E649CF /* ThirdPartyAuthUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B254718B29F9A9B100E649CF /* ThirdPartyAuthUITests.swift */,
+			);
+			path = ThirdPartyAuthUITests;
+			sourceTree = "<group>";
+		};
+		B254719429F9A9D800E649CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B285D5B029F2CE7D00B86937 = {
 			isa = PBXGroup;
 			children = (
-				B285D5BC29F2CE7D00B86937 /* ThirdPartyAuth */,
-				B285D5C629F2CE7E00B86937 /* ThirdPartyAuthTests */,
+				B254716729F996B200E649CF /* Sources */,
+				B254716829F996D100E649CF /* Tests */,
 				B285D5BB29F2CE7D00B86937 /* Products */,
+				B254719429F9A9D800E649CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,18 +278,10 @@
 			children = (
 				B285D5BA29F2CE7D00B86937 /* ThirdPartyAuth.framework */,
 				B285D5C229F2CE7E00B86937 /* ThirdPartyAuthTests.xctest */,
+				B254717F29F9A9B000E649CF /* ThirdPartyAuthUI.framework */,
+				B254718629F9A9B000E649CF /* ThirdPartyAuthUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		B285D5BC29F2CE7D00B86937 /* ThirdPartyAuth */ = {
-			isa = PBXGroup;
-			children = (
-				B285D5D229F2CF6000B86937 /* Apple */,
-				B285D5D929F2CFAD00B86937 /* Common */,
-				B285D5F229F2D06500B86937 /* Resources */,
-			);
-			path = ThirdPartyAuth;
 			sourceTree = "<group>";
 		};
 		B285D5C629F2CE7E00B86937 /* ThirdPartyAuthTests */ = {
@@ -131,101 +292,19 @@
 			path = ThirdPartyAuthTests;
 			sourceTree = "<group>";
 		};
-		B285D5D229F2CF6000B86937 /* Apple */ = {
-			isa = PBXGroup;
-			children = (
-				B285D5D329F2CF6900B86937 /* Providers */,
-				B285D5D429F2CF7200B86937 /* Services */,
-			);
-			path = Apple;
-			sourceTree = "<group>";
-		};
-		B285D5D329F2CF6900B86937 /* Providers */ = {
-			isa = PBXGroup;
-			children = (
-				B2259DFE29F92313006D9B49 /* AppleAuthHandler.swift */,
-				B285D5D529F2CF8400B86937 /* AppleAuthProvider.swift */,
-			);
-			path = Providers;
-			sourceTree = "<group>";
-		};
-		B285D5D429F2CF7200B86937 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				B285D5D729F2CF9000B86937 /* AppleCredentialsService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		B285D5D929F2CFAD00B86937 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				B285D5DA29F2CFB400B86937 /* Extensions */,
-				B285D5DF29F2CFD500B86937 /* Models */,
-				B285D5E429F2CFFF00B86937 /* Protocols */,
-				B2BA853E29F3E1CC00F4B915 /* Styles */,
-				B285D5E529F2D00800B86937 /* Views */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		B285D5DA29F2CFB400B86937 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				B285D5DD29F2CFCB00B86937 /* UIStackView.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		B285D5DF29F2CFD500B86937 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				B285D5E029F2CFEA00B86937 /* ThirdPartyAuthType.swift */,
-				B285D5E229F2CFF300B86937 /* ThirdPartyAuthUserModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		B285D5E429F2CFFF00B86937 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				B285D5E829F2D02600B86937 /* BaseAuthProvider.swift */,
-				B285D5EA29F2D03400B86937 /* BaseCredentialsService.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		B285D5E529F2D00800B86937 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				B2BA853829F3D7E700F4B915 /* ButtonsContainer */,
-				B2BA853929F3D84300F4B915 /* TitleContainer */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		B285D5E629F2D00D00B86937 /* Button */ = {
-			isa = PBXGroup;
-			children = (
-				B285D5EC29F2D04000B86937 /* ThirdPartyAuthButton.swift */,
-			);
-			path = Button;
-			sourceTree = "<group>";
-		};
-		B285D5E729F2D01100B86937 /* Container */ = {
+		B285D5E729F2D01100B86937 /* ButtonContainer */ = {
 			isa = PBXGroup;
 			children = (
 				B285D5EE29F2D04C00B86937 /* ThirdPartyAuthButtonContainer.swift */,
 				B285D5F029F2D05800B86937 /* ThirdPartyAuthButtonContainerModel.swift */,
 			);
-			path = Container;
+			path = ButtonContainer;
 			sourceTree = "<group>";
 		};
 		B285D5F229F2D06500B86937 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				B285D5F329F2D07400B86937 /* Colors */,
-				B2BA854429F3E34600F4B915 /* Fonts */,
 				B285D5F429F2D07900B86937 /* Images */,
 				B2BA852F29F3CD6E00F4B915 /* Strings */,
 			);
@@ -259,77 +338,25 @@
 			path = Strings;
 			sourceTree = "<group>";
 		};
-		B2BA853829F3D7E700F4B915 /* ButtonsContainer */ = {
+		B2BA853929F3D84300F4B915 /* TitleView */ = {
 			isa = PBXGroup;
 			children = (
-				B285D5E629F2D00D00B86937 /* Button */,
-				B285D5E729F2D01100B86937 /* Container */,
+				B2BA853A29F3D91700F4B915 /* ThirdPartyAuthTitleView.swift */,
+				B254717829F99FFA00E649CF /* ThirdPartyAuthTitleViewModel.swift */,
 			);
-			path = ButtonsContainer;
-			sourceTree = "<group>";
-		};
-		B2BA853929F3D84300F4B915 /* TitleContainer */ = {
-			isa = PBXGroup;
-			children = (
-				B2BA853A29F3D91700F4B915 /* ThirdPartyAuthTitleContainer.swift */,
-			);
-			path = TitleContainer;
-			sourceTree = "<group>";
-		};
-		B2BA853E29F3E1CC00F4B915 /* Styles */ = {
-			isa = PBXGroup;
-			children = (
-				B2BA854A29F3E49F00F4B915 /* CustomStyles */,
-				B2BA854129F3E24E00F4B915 /* StaticStyles */,
-				B2BA853F29F3E1EF00F4B915 /* StylesExtension.swift */,
-			);
-			path = Styles;
-			sourceTree = "<group>";
-		};
-		B2BA854129F3E24E00F4B915 /* StaticStyles */ = {
-			isa = PBXGroup;
-			children = (
-				B2BA854229F3E25E00F4B915 /* UILabel.swift */,
-			);
-			path = StaticStyles;
-			sourceTree = "<group>";
-		};
-		B2BA854429F3E34600F4B915 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				B2BA854529F3E34E00F4B915 /* FontsList */,
-				B2BA854829F3E45C00F4B915 /* Fonts.swift */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
-		B2BA854529F3E34E00F4B915 /* FontsList */ = {
-			isa = PBXGroup;
-			children = (
-				B2BA854629F3E39800F4B915 /* Inter-Regular.otf */,
-			);
-			path = FontsList;
-			sourceTree = "<group>";
-		};
-		B2BA854A29F3E49F00F4B915 /* CustomStyles */ = {
-			isa = PBXGroup;
-			children = (
-				B2BA854B29F3E4A700F4B915 /* UILabel */,
-			);
-			path = CustomStyles;
-			sourceTree = "<group>";
-		};
-		B2BA854B29F3E4A700F4B915 /* UILabel */ = {
-			isa = PBXGroup;
-			children = (
-				B2BA854C29F3E4B600F4B915 /* LabelStyle.swift */,
-			);
-			path = UILabel;
+			path = TitleView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		B254717A29F9A9B000E649CF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B285D5B529F2CE7D00B86937 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -340,12 +367,49 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		B254717E29F9A9B000E649CF /* ThirdPartyAuthUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B254718E29F9A9B100E649CF /* Build configuration list for PBXNativeTarget "ThirdPartyAuthUI" */;
+			buildPhases = (
+				B254717A29F9A9B000E649CF /* Headers */,
+				B25471A729F9AE8100E649CF /* SwiftGen */,
+				B254717B29F9A9B000E649CF /* Sources */,
+				B254717C29F9A9B000E649CF /* Frameworks */,
+				B254717D29F9A9B000E649CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B254719829F9A9D900E649CF /* PBXTargetDependency */,
+			);
+			name = ThirdPartyAuthUI;
+			productName = ThirdPartyAuthUI;
+			productReference = B254717F29F9A9B000E649CF /* ThirdPartyAuthUI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B254718529F9A9B000E649CF /* ThirdPartyAuthUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B254719129F9A9B100E649CF /* Build configuration list for PBXNativeTarget "ThirdPartyAuthUITests" */;
+			buildPhases = (
+				B254718229F9A9B000E649CF /* Sources */,
+				B254718329F9A9B000E649CF /* Frameworks */,
+				B254718429F9A9B000E649CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B254718929F9A9B100E649CF /* PBXTargetDependency */,
+			);
+			name = ThirdPartyAuthUITests;
+			productName = ThirdPartyAuthUITests;
+			productReference = B254718629F9A9B000E649CF /* ThirdPartyAuthUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B285D5B929F2CE7D00B86937 /* ThirdPartyAuth */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B285D5CC29F2CE7E00B86937 /* Build configuration list for PBXNativeTarget "ThirdPartyAuth" */;
 			buildPhases = (
 				B285D5B529F2CE7D00B86937 /* Headers */,
-				B285D5FC29F2D28200B86937 /* SwiftGen */,
 				B285D5B629F2CE7D00B86937 /* Sources */,
 				B285D5B729F2CE7D00B86937 /* Frameworks */,
 				B285D5B829F2CE7D00B86937 /* Resources */,
@@ -357,7 +421,6 @@
 			);
 			name = ThirdPartyAuth;
 			packageProductDependencies = (
-				B2BA852D29F3C79200F4B915 /* Utils */,
 			);
 			productName = ThirdPartyAuth;
 			productReference = B285D5BA29F2CE7D00B86937 /* ThirdPartyAuth.framework */;
@@ -391,6 +454,12 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					B254717E29F9A9B000E649CF = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					B254718529F9A9B000E649CF = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					B285D5B929F2CE7D00B86937 = {
 						CreatedOnToolsVersion = 14.2;
 						LastSwiftMigration = 1420;
@@ -411,7 +480,6 @@
 			);
 			mainGroup = B285D5B029F2CE7D00B86937;
 			packageReferences = (
-				B2BA852C29F3C79200F4B915 /* XCRemoteSwiftPackageReference "iOS-Utils" */,
 			);
 			productRefGroup = B285D5BB29F2CE7D00B86937 /* Products */;
 			projectDirPath = "";
@@ -419,19 +487,34 @@
 			targets = (
 				B285D5B929F2CE7D00B86937 /* ThirdPartyAuth */,
 				B285D5C129F2CE7E00B86937 /* ThirdPartyAuthTests */,
+				B254717E29F9A9B000E649CF /* ThirdPartyAuthUI */,
+				B254718529F9A9B000E649CF /* ThirdPartyAuthUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B254717D29F9A9B000E649CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B25471A629F9AE1000E649CF /* Localizable.strings in Resources */,
+				B25471A529F9AE0B00E649CF /* Images.xcassets in Resources */,
+				B25471A429F9AE0500E649CF /* Colors.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B254718429F9A9B000E649CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B285D5B829F2CE7D00B86937 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B285D5F829F2D08F00B86937 /* Colors.xcassets in Resources */,
-				B2BA854729F3E39800F4B915 /* Inter-Regular.otf in Resources */,
-				B2BA853229F3CDA100F4B915 /* Localizable.strings in Resources */,
-				B285D5FA29F2D09C00B86937 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +528,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		B25471A729F9AE8100E649CF /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/BuildTools/swiftgen\" config run --config ${SRCROOT}/.swiftgen.yml\n";
+		};
 		B285D5FB29F2D22500B86937 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -464,50 +565,45 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PROJECT_DIR}/BuildTools/swiftlint_0_47_1\" --config ${SRCROOT}/.swiftlint.yml\n";
 		};
-		B285D5FC29F2D28200B86937 /* SwiftGen */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftGen;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PROJECT_DIR}/BuildTools/swiftgen\" config run --config ${SRCROOT}/.swiftgen.yml\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B254717B29F9A9B000E649CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B25471A229F9ADA200E649CF /* ThirdPartyAuthButton.swift in Sources */,
+				B25471A129F9AD9C00E649CF /* ThirdPartyAuthTitleViewModel.swift in Sources */,
+				B25471A029F9AD9600E649CF /* ThirdPartyAuthTitleView.swift in Sources */,
+				B254719F29F9AD7B00E649CF /* ThirdPartyAuthButtonContainerModel.swift in Sources */,
+				B254719E29F9AD7400E649CF /* ThirdPartyAuthButtonContainer.swift in Sources */,
+				B254719D29F9AD5500E649CF /* Strings.swift in Sources */,
+				B254719C29F9AD3500E649CF /* Assets.swift in Sources */,
+				B25471A329F9ADCF00E649CF /* UIStackView.swift in Sources */,
+				B254719B29F9AD2300E649CF /* Colors.swift in Sources */,
+				B254719A29F9AD0C00E649CF /* UIImage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B254718229F9A9B000E649CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B254718C29F9A9B100E649CF /* ThirdPartyAuthUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B285D5B629F2CE7D00B86937 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B285D5F629F2D08600B86937 /* Colors.swift in Sources */,
-				B285D5EB29F2D03400B86937 /* BaseCredentialsService.swift in Sources */,
-				B2BA854029F3E1EF00F4B915 /* StylesExtension.swift in Sources */,
 				B2259DFF29F92313006D9B49 /* AppleAuthHandler.swift in Sources */,
 				B285D5E929F2D02600B86937 /* BaseAuthProvider.swift in Sources */,
-				B285D5F129F2D05800B86937 /* ThirdPartyAuthButtonContainerModel.swift in Sources */,
 				B285D5E329F2CFF300B86937 /* ThirdPartyAuthUserModel.swift in Sources */,
-				B2BA854329F3E25E00F4B915 /* UILabel.swift in Sources */,
-				B2BA854929F3E45C00F4B915 /* Fonts.swift in Sources */,
-				B2BA853729F3D01D00F4B915 /* Strings.swift in Sources */,
-				B285D5EF29F2D04C00B86937 /* ThirdPartyAuthButtonContainer.swift in Sources */,
 				B285D5E129F2CFEA00B86937 /* ThirdPartyAuthType.swift in Sources */,
-				B285D5FE29F2D33200B86937 /* Assets.swift in Sources */,
-				B285D5ED29F2D04000B86937 /* ThirdPartyAuthButton.swift in Sources */,
+				B254716429F97D6600E649CF /* UserDataModel.swift in Sources */,
 				B285D5D629F2CF8400B86937 /* AppleAuthProvider.swift in Sources */,
-				B2BA853B29F3D91700F4B915 /* ThirdPartyAuthTitleContainer.swift in Sources */,
-				B285D5D829F2CF9000B86937 /* AppleCredentialsService.swift in Sources */,
-				B2BA854D29F3E4B600F4B915 /* LabelStyle.swift in Sources */,
-				B285D5DE29F2CFCB00B86937 /* UIStackView.swift in Sources */,
+				B254716629F97F4900E649CF /* AppleAuthUserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +618,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B254718929F9A9B100E649CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B254717E29F9A9B000E649CF /* ThirdPartyAuthUI */;
+			targetProxy = B254718829F9A9B100E649CF /* PBXContainerItemProxy */;
+		};
+		B254719829F9A9D900E649CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B285D5B929F2CE7D00B86937 /* ThirdPartyAuth */;
+			targetProxy = B254719729F9A9D900E649CF /* PBXContainerItemProxy */;
+		};
 		B285D5C529F2CE7E00B86937 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B285D5B929F2CE7D00B86937 /* ThirdPartyAuth */;
@@ -542,6 +648,118 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B254718F29F9A9B100E649CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7C23CBT2F7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.admiralbizon.ThirdPartyAuthUI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B254719029F9A9B100E649CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7C23CBT2F7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.admiralbizon.ThirdPartyAuthUI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B254719229F9A9B100E649CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7C23CBT2F7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.admiralbizon.ThirdPartyAuthUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B254719329F9A9B100E649CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7C23CBT2F7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.admiralbizon.ThirdPartyAuthUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		B285D5CA29F2CE7E00B86937 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -785,6 +1003,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B254718E29F9A9B100E649CF /* Build configuration list for PBXNativeTarget "ThirdPartyAuthUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B254718F29F9A9B100E649CF /* Debug */,
+				B254719029F9A9B100E649CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B254719129F9A9B100E649CF /* Build configuration list for PBXNativeTarget "ThirdPartyAuthUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B254719229F9A9B100E649CF /* Debug */,
+				B254719329F9A9B100E649CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B285D5B429F2CE7D00B86937 /* Build configuration list for PBXProject "ThirdPartyAuth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -813,25 +1049,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		B2BA852C29F3C79200F4B915 /* XCRemoteSwiftPackageReference "iOS-Utils" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/surfstudio/iOS-Utils";
-			requirement = {
-				kind = exactVersion;
-				version = 13.2.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		B2BA852D29F3C79200F4B915 /* Utils */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B2BA852C29F3C79200F4B915 /* XCRemoteSwiftPackageReference "iOS-Utils" */;
-			productName = Utils;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B285D5B129F2CE7D00B86937 /* Project object */;
 }
