@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B2259DFF29F92313006D9B49 /* AppleAuthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2259DFE29F92313006D9B49 /* AppleAuthHandler.swift */; };
 		B285D5C329F2CE7E00B86937 /* ThirdPartyAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B285D5BA29F2CE7D00B86937 /* ThirdPartyAuth.framework */; };
 		B285D5C829F2CE7E00B86937 /* ThirdPartyAuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5C729F2CE7E00B86937 /* ThirdPartyAuthTests.swift */; };
 		B285D5D629F2CF8400B86937 /* AppleAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5D529F2CF8400B86937 /* AppleAuthProvider.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B2259DFE29F92313006D9B49 /* AppleAuthHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthHandler.swift; sourceTree = "<group>"; };
 		B285D5BA29F2CE7D00B86937 /* ThirdPartyAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThirdPartyAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B285D5C229F2CE7E00B86937 /* ThirdPartyAuthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThirdPartyAuthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B285D5C729F2CE7E00B86937 /* ThirdPartyAuthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyAuthTests.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		B285D5D329F2CF6900B86937 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
+				B2259DFE29F92313006D9B49 /* AppleAuthHandler.swift */,
 				B285D5D529F2CF8400B86937 /* AppleAuthProvider.swift */,
 			);
 			path = Providers;
@@ -489,6 +492,7 @@
 				B285D5F629F2D08600B86937 /* Colors.swift in Sources */,
 				B285D5EB29F2D03400B86937 /* BaseCredentialsService.swift in Sources */,
 				B2BA854029F3E1EF00F4B915 /* StylesExtension.swift in Sources */,
+				B2259DFF29F92313006D9B49 /* AppleAuthHandler.swift in Sources */,
 				B285D5E929F2D02600B86937 /* BaseAuthProvider.swift in Sources */,
 				B285D5F129F2D05800B86937 /* ThirdPartyAuthButtonContainerModel.swift in Sources */,
 				B285D5E329F2CFF300B86937 /* ThirdPartyAuthUserModel.swift in Sources */,

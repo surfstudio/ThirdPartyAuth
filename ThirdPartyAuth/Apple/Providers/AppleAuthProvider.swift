@@ -7,39 +7,44 @@
 
 import AuthenticationServices
 
-final class AppleAuthProvider: NSObject, BaseAuthProvider {
+public final class AppleAuthProvider: NSObject, BaseAuthProvider {
 
-    // MARK: - Properties
+    // MARK: - Public Properties
 
-    var onAuthFinished: ((ThirdPartyAuthResult) -> Void)?
+    public var onAuthFinished: ((ThirdPartyAuthResult) -> Void)?
 
-    // MARK: - Methods
+    // MARK: - Private Properties
 
-    func performAuth() {
+    private let appleAuthHandler = AppleAuthHandler()
+
+    // MARK: - Initialization
+
+    override public init() {
+        super.init()
+        configureAppleAuthHandler()
+    }
+
+    // MARK: - Public Methods
+
+    public func performAuth() {
         let request = ASAuthorizationAppleIDProvider().createRequest()
         request.requestedScopes = [.fullName, .email]
 
         let authorizationController = ASAuthorizationController(authorizationRequests: [request])
-        authorizationController.delegate = self
+        authorizationController.delegate = appleAuthHandler
         authorizationController.performRequests()
     }
 
 }
 
-// MARK: - ASAuthorizationControllerDelegate
+// MARK: - Private Methods
 
-extension AppleAuthProvider: ASAuthorizationControllerDelegate {
+private extension AppleAuthProvider {
 
-    func authorizationController(controller: ASAuthorizationController,
-                                 didCompleteWithAuthorization authorization: ASAuthorization) {
-        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
-            let userModel = ThirdPartyAuthUserModel(from: appleIDCredential)
-            onAuthFinished?(.success(userModel))
+    func configureAppleAuthHandler() {
+        appleAuthHandler.onAuthFinished = { [weak self] result in
+            self?.onAuthFinished?(result)
         }
-    }
-
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        onAuthFinished?(.failure(error))
     }
 
 }

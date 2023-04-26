@@ -7,7 +7,7 @@
 
 public typealias ThirdPartyAuthResult = Result<ThirdPartyAuthUserModel, Error>
 
-protocol BaseAuthProvider {
+public protocol BaseAuthProvider {
     var onAuthFinished: ((ThirdPartyAuthResult) -> Void)? { get set }
     func performAuth()
 }

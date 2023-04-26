@@ -11,18 +11,36 @@ public struct ThirdPartyAuthUserModel {
 
     // MARK: - Public Properties
 
-    public let id: String
-    public let firstName: String?
-    public let lastName: String?
-    public let email: String?
+    public let authType: ThirdPartyAuthType
+    public let userData: UserDataModel
 
     // MARK: - Initialization
 
-    public init(from appleIDCredential: ASAuthorizationAppleIDCredential) {
-        self.id = appleIDCredential.user
-        self.firstName = appleIDCredential.fullName?.givenName
-        self.lastName = appleIDCredential.fullName?.familyName
-        self.email = appleIDCredential.email
+    init(from appleIDCredential: ASAuthorizationAppleIDCredential) {
+        self.authType = .apple
+        self.userData = AppleAuthUserModel(userIdentifier: appleIDCredential.user,
+                                           identityToken: appleIDCredential.identityToken,
+                                           authorizationCode: appleIDCredential.authorizationCode)
     }
 
 }
+
+public struct AppleAuthUserModel: UserDataModel {
+
+    // MARK: - Public Properties
+
+    public let userIdentifier: String
+    public let identityToken: Data?
+    public let authorizationCode: Data?
+
+    // MARK: - Initialization
+
+    init(userIdentifier: String, identityToken: Data?, authorizationCode: Data?) {
+        self.userIdentifier = userIdentifier
+        self.identityToken = identityToken
+        self.authorizationCode = authorizationCode
+    }
+
+}
+
+public protocol UserDataModel {}
