@@ -15,14 +15,15 @@ public final class GoogleAuthProvider: NSObject, BaseAuthProvider {
 
     public var onAuthFinished: ((ThirdPartyAuthResult) -> Void)?
 
-    // MARK: - Initialization
+    // MARK: - Public Methods
 
-    public init(with clientID: String) {
-        super.init()
+    public func start(clientID: String) {
         configureGoogleAuthInstance(with: clientID)
     }
 
-    // MARK: - Public Methods
+    public func canHandle(_ url: URL) -> Bool {
+        return GIDSignIn.sharedInstance.handle(url)
+    }
 
     public func restorePreviousSignIn() {
         GIDSignIn.sharedInstance.restorePreviousSignIn { [weak self] user, error in

@@ -11,8 +11,17 @@ let package = Package(
         .library(name: "ThirdPartyAuth", targets: ["ThirdPartyAuth"]),
         .library(name: "ThirdPartyAuthUI", targets: ["ThirdPartyAuthUI"])
     ],
+    dependencies: [
+        .package(url: "https://github.com/google/GoogleSignIn-iOS", revision: "7.0.0")
+    ],
     targets: [
-        .target(name: "ThirdPartyAuth"),
+        .target(
+            name: "ThirdPartyAuth",
+            dependencies: [
+                .product(name: "GoogleSignIn",
+                         package: "GoogleSignIn-iOS")
+            ]
+        ),
         .target(name: "ThirdPartyAuthUI", dependencies: ["ThirdPartyAuth"]),
         .testTarget(name: "ThirdPartyAuthTests", dependencies: ["ThirdPartyAuth"]),
         .testTarget(name: "ThirdPartyAuthUITests", dependencies: ["ThirdPartyAuthUI"])
