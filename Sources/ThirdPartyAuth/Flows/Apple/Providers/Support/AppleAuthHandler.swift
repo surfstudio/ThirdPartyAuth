@@ -37,7 +37,7 @@ extension AppleAuthHandler: ASAuthorizationControllerDelegate {
     }
 
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        onAuthFinished?(.failure(error))
+        onAuthFinished?(.failure(.appleIDAuthFailed))
     }
 
 }
