@@ -9,6 +9,12 @@ import AuthenticationServices
 
 final class AppleAuthHandler: NSObject {
 
+    // MARK: - Nested Types
+
+    enum AppleAuthError: Error {
+        case invalidCredential
+    }
+
     // MARK: - Properties
 
     var onAuthFinished: ((ThirdPartyAuthResult) -> Void)?
@@ -21,10 +27,13 @@ extension AppleAuthHandler: ASAuthorizationControllerDelegate {
 
     func authorizationController(controller: ASAuthorizationController,
                                  didCompleteWithAuthorization authorization: ASAuthorization) {
-        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
-            let userModel = ThirdPartyAuthUserModel(from: appleIDCredential)
-            onAuthFinished?(.success(userModel))
+        guard let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential else {
+            onAuthFinished?(.failure(AppleAuthError.invalidCredential))
+            return
         }
+
+        let userModel = ThirdPartyAuthUserModel(from: appleIDCredential)
+        onAuthFinished?(.success(userModel))
     }
 
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
