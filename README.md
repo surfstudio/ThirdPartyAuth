@@ -28,7 +28,7 @@ More info with examples you can see [here](https://medium.com/@priya_talreja/sig
 1. Get an OAuth client ID, used to identify your app to Google's authentication backend. You can generate it throught Google Identity page
 2. Add your OAuth client ID and custom URL scheme to Xcode project
 
-Detailed info and instructions you can at [official Google guide](https://developers.google.com/identity/sign-in/ios/start-integrating).
+Detailed info and instructions you can see at [official Google guide](https://developers.google.com/identity/sign-in/ios/start-integrating).
 
 ## Installation
 
@@ -92,7 +92,9 @@ ThirdPartyAuthService.sharedInstance.start(with: .init(authTypes: authTypes))
 For handle redirect into third party authentication services pages, you'll need to implement `openUrl` function at `AppDelegate` file:
 
 ```swift
-func application(_: UIApplication, open url: URL, options _: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+func application(_: UIApplication,
+                open url: URL,
+                options _: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
     return ThirdPartyAuthService.sharedInstance.canHandle(url)
 }
 ```
@@ -141,7 +143,8 @@ You can `ThirdPartyAuthButtonContaner` view into swift-file or XIB and configure
 Recommended way to set authTypes property is to use `supportedAuthTypes` property of `ThirdPartyAuthService`:
 
 ```swift
-let model = ThirdPartyAuthButtonContainerModel(authTypes: ThirdPartyAuthService.sharedInstance.supportedAuthTypes)
+let authTypes = ThirdPartyAuthService.sharedInstance.supportedAuthTypes
+let model = ThirdPartyAuthButtonContainerModel(authTypes: authTypes ?? [])
 thirdPartyAuthButtonContainer.configure(with: model)
 ```
 
