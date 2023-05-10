@@ -8,7 +8,7 @@
 import AuthenticationServices
 import GoogleSignIn
 
-/// Common user data model, returned by third party authorization providers
+/// Common user data model, returned by third party authorization service
 public struct ThirdPartyAuthUserModel {
 
     // MARK: - Public Properties
