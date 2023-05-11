@@ -5,17 +5,16 @@ import PackageDescription
 
 let package = Package(
     name: "ThirdPartyAuth",
+    defaultLocalization: "en",
     platforms: [.iOS(.v13)],
     products: [
-        .library(
-            name: "ThirdPartyAuth",
-            targets: ["ThirdPartyAuth"])
+        .library(name: "ThirdPartyAuth", targets: ["ThirdPartyAuth"]),
+        .library(name: "ThirdPartyAuthUI", targets: ["ThirdPartyAuthUI"])
     ],
     targets: [
-        .target(
-            name: "ThirdPartyAuth",
-            dependencies: [],
-            path: "ThirdPartyAuth"
-        )
+        .target(name: "ThirdPartyAuth"),
+        .target(name: "ThirdPartyAuthUI", dependencies: ["ThirdPartyAuth"]),
+        .testTarget(name: "ThirdPartyAuthTests", dependencies: ["ThirdPartyAuth"]),
+        .testTarget(name: "ThirdPartyAuthUITests", dependencies: ["ThirdPartyAuthUI"])
     ]
 )
