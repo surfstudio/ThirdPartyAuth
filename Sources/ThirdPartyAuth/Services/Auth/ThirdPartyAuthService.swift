@@ -12,12 +12,11 @@ public final class ThirdPartyAuthService: ThirdPartyAuthServiceInterface {
     // MARK: - Public Properties
 
     public var onAuthFinished: ((ThirdPartyAuthResult) -> Void)?
+    public var supportedAuthTypes: [ThirdPartyAuthType] {
+        configuration?.authTypes ?? []
+    }
 
     public static let sharedInstance = ThirdPartyAuthService()
-
-    public var supportedAuthTypes: [ThirdPartyAuthType]? {
-        configuration?.authTypes
-    }
 
     // MARK: - Private Properties
 

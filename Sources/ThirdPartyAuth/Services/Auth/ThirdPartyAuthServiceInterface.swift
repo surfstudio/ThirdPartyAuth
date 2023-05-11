@@ -11,6 +11,8 @@ import Foundation
 public protocol ThirdPartyAuthServiceInterface: AnyObject {
     /// Closure, called on finish authorization process
     var onAuthFinished: ((ThirdPartyAuthResult) -> Void)? { get set }
+    /// List of supported auth types
+    var supportedAuthTypes: [ThirdPartyAuthType] { get }
     /// Start authorization service with given configuration (called only one time)
     func start(with configuration: ThirdPartyAuthServiceConfiguration)
     /// Check is any of supported third party auth providers can handle given url
