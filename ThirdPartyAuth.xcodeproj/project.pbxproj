@@ -38,6 +38,7 @@
 		B285D5E329F2CFF300B86937 /* ThirdPartyAuthUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5E229F2CFF300B86937 /* ThirdPartyAuthUserModel.swift */; };
 		B285D5E929F2D02600B86937 /* BaseAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5E829F2D02600B86937 /* BaseAuthProvider.swift */; };
 		B2C83D6829FD900900301FE9 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = B2C83D6729FD900900301FE9 /* GoogleSignIn */; };
+		B2DB4EAA2A0E1B8500246CE8 /* VK in Frameworks */ = {isa = PBXBuildFile; productRef = B2DB4EA92A0E1B8500246CE8 /* VK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2C83D6829FD900900301FE9 /* GoogleSignIn in Frameworks */,
+				B2DB4EAA2A0E1B8500246CE8 /* VK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +449,7 @@
 			name = ThirdPartyAuth;
 			packageProductDependencies = (
 				B2C83D6729FD900900301FE9 /* GoogleSignIn */,
+				B2DB4EA92A0E1B8500246CE8 /* VK */,
 			);
 			productName = ThirdPartyAuth;
 			productReference = B285D5BA29F2CE7D00B86937 /* ThirdPartyAuth.framework */;
@@ -507,6 +510,7 @@
 			mainGroup = B285D5B029F2CE7D00B86937;
 			packageReferences = (
 				B2C83D6629FD900900301FE9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				B2DB4EA82A0E1B8500246CE8 /* XCRemoteSwiftPackageReference "VKSDK-iOS" */,
 			);
 			productRefGroup = B285D5BB29F2CE7D00B86937 /* Products */;
 			projectDirPath = "";
@@ -1091,6 +1095,14 @@
 				version = 7.0.0;
 			};
 		};
+		B2DB4EA82A0E1B8500246CE8 /* XCRemoteSwiftPackageReference "VKSDK-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/VKCOM/VKSDK-iOS";
+			requirement = {
+				kind = exactVersion;
+				version = 0.101.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1098,6 +1110,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B2C83D6629FD900900301FE9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignIn;
+		};
+		B2DB4EA92A0E1B8500246CE8 /* VK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2DB4EA82A0E1B8500246CE8 /* XCRemoteSwiftPackageReference "VKSDK-iOS" */;
+			productName = VK;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
