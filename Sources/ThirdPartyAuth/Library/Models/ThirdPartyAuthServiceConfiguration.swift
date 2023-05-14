@@ -13,12 +13,16 @@ public struct ThirdPartyAuthServiceConfiguration {
 
     let authTypes: [ThirdPartyAuthType]
     let googleClientID: String?
+    let vkAuthConfiguration: VKAuthConfiguration?
 
     // MARK: - Initialization
 
-    public init(authTypes: [ThirdPartyAuthType], googleClientID: String? = nil) {
+    public init(authTypes: [ThirdPartyAuthType],
+                googleClientID: String? = nil,
+                vkAuthConfiguration: VKAuthConfiguration? = nil) {
         self.authTypes = authTypes
         self.googleClientID = googleClientID
+        self.vkAuthConfiguration = vkAuthConfiguration
     }
 
 }

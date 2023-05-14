@@ -9,7 +9,7 @@ import Foundation
 import GoogleSignIn
 
 /// Google sign in authorization process provider
-final class GoogleAuthProvider: NSObject, BaseAuthProvider {
+final class GoogleAuthProvider: BaseAuthProvider {
 
     // MARK: - Nested Types
 

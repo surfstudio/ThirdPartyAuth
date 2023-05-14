@@ -57,7 +57,9 @@ final class VKAuthProvider: NSObject, BaseAuthProvider {
 
         do {
             let authController = getAuthControllerForOauthCodeFlow()
-            let controller = try vk.vkid.ui(for: authController).uiViewController()
+            //let controller = try vk.vkid.ui(for: authController).uiViewController()
+            let controller = try vk.vkid.ui(for: authController).uiViewController(configuration: .default)
+            controller.modalPresentationStyle = .overFullScreen
 
             topViewController.present(controller, animated: true)
         } catch {
