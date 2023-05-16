@@ -15,7 +15,6 @@ final class GoogleAuthProvider: BaseAuthProvider {
 
     enum GoogleAuthError: Error {
         case emptyGoogleUserData
-        case getGoogleUserIdTokenFailed
         case topViewControllerNotExist
     }
 
@@ -39,18 +38,7 @@ final class GoogleAuthProvider: BaseAuthProvider {
 
     func restorePreviousSignIn() {
         GIDSignIn.sharedInstance.restorePreviousSignIn { [weak self] user, error in
-            if let error = error {
-                self?.onAuthFinished?(.failure(error))
-                return
-            }
-
-            guard let user = user else {
-                self?.onAuthFinished?(.failure(GoogleAuthError.emptyGoogleUserData))
-                return
-            }
-
-            let userModel = ThirdPartyAuthUserModel(from: user)
-            self?.onAuthFinished?(.success(userModel))
+            self?.handleSignInResult(user: user, error: error)
         }
     }
 
@@ -71,13 +59,15 @@ final class GoogleAuthProvider: BaseAuthProvider {
                 return
             }
 
-            // Get user's ID token
             self?.refreshUserToken(with: signInResult)
         }
     }
 
-    func signOut() {
+    func signOut(_ onSignOutComplete: ((Bool) -> Void)?) {
         GIDSignIn.sharedInstance.signOut()
+
+        let isSignedOut = GIDSignIn.sharedInstance.currentUser == nil
+        onSignOutComplete?(isSignedOut)
     }
 
 }
@@ -92,19 +82,23 @@ private extension GoogleAuthProvider {
 
     func refreshUserToken(with signInResult: GIDSignInResult) {
         signInResult.user.refreshTokensIfNeeded { [weak self] user, error in
-            guard error == nil else {
-                self?.onAuthFinished?(.failure(GoogleAuthError.getGoogleUserIdTokenFailed))
-                return
-            }
-
-            guard let user = user else {
-                self?.onAuthFinished?(.failure(GoogleAuthError.emptyGoogleUserData))
-                return
-            }
-
-            let userModel = ThirdPartyAuthUserModel(from: user)
-            self?.onAuthFinished?(.success(userModel))
+            self?.handleSignInResult(user: user, error: error)
         }
+    }
+
+    func handleSignInResult(user: GIDGoogleUser?, error: Error?) {
+        if let error = error {
+            onAuthFinished?(.failure(error))
+            return
+        }
+
+        guard let user = user else {
+            onAuthFinished?(.failure(GoogleAuthError.emptyGoogleUserData))
+            return
+        }
+
+        let userModel = ThirdPartyAuthUserModel(from: user)
+        onAuthFinished?(.success(userModel))
     }
 
 }

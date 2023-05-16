@@ -14,5 +14,11 @@ protocol BaseAuthProvider {
     /// Common method for signIn user by third party services
     func signIn()
     /// Common method for signOut user by third party services
-    func signOut()
+    func signOut(_ onSignOutComplete: ((Bool) -> Void)?)
+}
+
+extension BaseAuthProvider {
+
+    func signOut(_ onSignOutComplete: ((Bool) -> Void)?) {}
+
 }

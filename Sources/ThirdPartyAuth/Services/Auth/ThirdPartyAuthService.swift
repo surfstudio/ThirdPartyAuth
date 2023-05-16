@@ -39,6 +39,7 @@ public final class ThirdPartyAuthService: ThirdPartyAuthServiceInterface {
 
         self.configuration = configuration
         configureProviders()
+        startProviders()
     }
 
     public func canHandle(_ url: URL) -> Bool {
@@ -98,16 +99,19 @@ public final class ThirdPartyAuthService: ThirdPartyAuthServiceInterface {
         provider.signIn()
     }
 
-    public func signOut(with authType: ThirdPartyAuthType) {
+    public func signOut(with authType: ThirdPartyAuthType, _ onSignOutComplete: ((Bool) -> Void)?) {
         guard
             isConfigurationInitialized(),
             isAuthTypeSupported(type: authType)
         else {
+            onSignOutComplete?(false)
             return
         }
 
         let provider = getProvider(for: authType)
-        provider.signOut()
+        provider.signOut { isSignedOut in
+            onSignOutComplete?(isSignedOut)
+        }
     }
 
 }
@@ -117,46 +121,31 @@ public final class ThirdPartyAuthService: ThirdPartyAuthServiceInterface {
 private extension ThirdPartyAuthService {
 
     func configureProviders() {
-        configureAppleAuthProvider()
-        configureGoogleAuthProvider()
-        configureVKAuthProvider()
+        configuration?.authTypes.forEach({ authType in
+            configureProvider(for: authType)
+        })
     }
 
-    func configureAppleAuthProvider() {
-        guard isAuthTypeSupported(type: .apple) else {
-            return
+    func startProviders() {
+        if isAuthTypeSupported(type: .google) {
+            googleAuthProvider.start(clientID: configuration?.googleClientID)
         }
 
-        appleAuthProvider.onAuthFinished = { [weak self] payload in
-            self?.onAuthFinished?(payload)
+        if isAuthTypeSupported(type: .vk) {
+            vkAuthProvider.start(with: configuration?.vkAuthConfiguration)
         }
     }
 
-    func configureGoogleAuthProvider() {
-        guard isAuthTypeSupported(type: .google) else {
-            return
-        }
-
-        googleAuthProvider.onAuthFinished = { [weak self] payload in
+    func configureProvider(for authType: ThirdPartyAuthType) {
+        var provider = getProvider(for: authType)
+        provider.onAuthFinished = { [weak self] payload in
             self?.onAuthFinished?(payload)
         }
-        googleAuthProvider.start(clientID: configuration?.googleClientID)
-    }
-
-    func configureVKAuthProvider() {
-        guard isAuthTypeSupported(type: .vk) else {
-            return
-        }
-
-        vkAuthProvider.onAuthFinished = { [weak self] payload in
-            self?.onAuthFinished?(payload)
-        }
-        vkAuthProvider.start(with: configuration?.vkAuthConfiguration)
     }
 
     func isConfigurationInitialized() -> Bool {
         guard configuration != nil else {
-            debugPrint("Auth configuration doesn't initialized")
+            debugPrint("ThirdParty auth service configuration hasn't been initialized")
             return false
         }
 
@@ -164,15 +153,7 @@ private extension ThirdPartyAuthService {
     }
 
     func isAuthTypeSupported(type: ThirdPartyAuthType) -> Bool {
-        guard
-            let configuration = configuration,
-            configuration.authTypes.contains(type)
-        else {
-            debugPrint("Selected auth type (\(type)) doesn't supported by this configuration")
-            return false
-        }
-
-        return true
+        return configuration?.authTypes.contains(type) ?? false
     }
 
     func getProvider(for type: ThirdPartyAuthType) -> BaseAuthProvider {

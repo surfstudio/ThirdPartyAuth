@@ -5,7 +5,7 @@
 //  Created by Ilya Klimenyuk on 14.05.2023.
 //
 
-import VKSDK
+import VK
 import UIKit
 
 /// VK ID authorization process provider
@@ -16,8 +16,6 @@ final class VKAuthProvider: NSObject, BaseAuthProvider {
     enum VKAuthError: Error {
         case authControllerPresentationProblem
         case noVKIDAccessTokenProvided
-        case unsupportedAuthSessionState
-        case userIsAlreadyAuthenticated
     }
 
     // MARK: - Properties
@@ -49,29 +47,23 @@ final class VKAuthProvider: NSObject, BaseAuthProvider {
     func signIn() {
         guard
             let vk = sharedVK,
-            let topViewController = UIApplication.topViewController()
+            let topViewController = UIApplication.topViewController(),
+            let authController = try? vk.vkid.ui(for: getControllerForOauth()).uiViewController()
         else {
             onAuthFinished?(.failure(VKAuthError.authControllerPresentationProblem))
             return
         }
 
-        do {
-            let authController = getAuthControllerForOauthCodeFlow()
-            //let controller = try vk.vkid.ui(for: authController).uiViewController()
-            let controller = try vk.vkid.ui(for: authController).uiViewController(configuration: .default)
-            controller.modalPresentationStyle = .overFullScreen
-
-            topViewController.present(controller, animated: true)
-        } catch {
-            debugPrint("Couldn't create VK AuthController, error: \(error)")
-            onAuthFinished?(.failure(VKAuthError.authControllerPresentationProblem))
-        }
+        topViewController.present(authController, animated: true)
     }
 
-    func signOut() {
-        let vkid = sharedVK?.vkid
-        vkid?.userSessions.first?.authorized?.logout { result in
-            debugPrint("User session logged out with result: \(result)")
+    func signOut(_ onSignOutComplete: ((Bool) -> Void)?) {
+        sharedVK?.vkid.userSessions.first?.authorized?.logout { payload in
+            if case .success = payload {
+                onSignOutComplete?(true)
+            } else {
+                onSignOutComplete?(false)
+            }
         }
     }
 
@@ -85,20 +77,16 @@ extension VKAuthProvider: VKIDFlowDelegate {
         do {
             let session = try result.get()
 
-            switch session.state {
-            case .authenticated:
-                onAuthFinished?(.failure(VKAuthError.userIsAlreadyAuthenticated))
-            case .authorized(let authorized):
-                guard let accessToken = authorized.accessToken else {
-                    onAuthFinished?(.failure(VKAuthError.noVKIDAccessTokenProvided))
-                    return
-                }
-
-                let userModel = ThirdPartyAuthUserModel(from: accessToken)
-                onAuthFinished?(.success(userModel))
-            @unknown default:
-                onAuthFinished?(.failure(VKAuthError.unsupportedAuthSessionState))
+            guard
+                case .authorized(let authorized) = session.state,
+                let accessToken = authorized.accessToken
+            else {
+                onAuthFinished?(.failure(VKAuthError.noVKIDAccessTokenProvided))
+                return
             }
+
+            let userModel = ThirdPartyAuthUserModel(from: accessToken)
+            onAuthFinished?(.success(userModel))
 
         } catch {
             onAuthFinished?(.failure(error))
@@ -114,7 +102,8 @@ private extension VKAuthProvider {
     func configureVKAuthInstance(with configuration: VKAuthConfiguration) {
         do {
             sharedVK = try VK {
-                App(credentials: .init(clientId: configuration.clientId, clientSecret: configuration.clientSecret))
+                App(credentials: .init(clientId: configuration.clientId,
+                                       clientSecret: configuration.clientSecret))
                 VKID()
             }
         } catch {
@@ -122,7 +111,7 @@ private extension VKAuthProvider {
         }
     }
 
-    func getAuthControllerForOauthCodeFlow() -> VKID.AuthController {
+    func getControllerForOauth() -> VKID.AuthController {
         VKID.AuthController(
             flow: .externalCodeFlow(),
             delegate: self

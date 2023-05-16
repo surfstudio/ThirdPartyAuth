@@ -26,5 +26,5 @@ public protocol ThirdPartyAuthServiceInterface: AnyObject {
     /// Sign in with third party auth provider
     func signIn(with authType: ThirdPartyAuthType)
     /// Sign out with third party auth provider (not used for Sign In with Apple)
-    func signOut(with authType: ThirdPartyAuthType)
+    func signOut(with authType: ThirdPartyAuthType, _ onSignOutComplete: ((Bool) -> Void)?)
 }
