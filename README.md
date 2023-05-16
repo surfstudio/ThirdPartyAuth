@@ -10,7 +10,7 @@ Library for quick register or login into your application using third party acco
 
 - [x] Sign In with Apple
 - [x] Google Sign-In
-- [ ] VK Sign In
+- [x] VK ID
 
 ## Prepare your app project
 
@@ -21,14 +21,23 @@ Before using this library you'll need to check, is your project matches all need
 1. Enable Sign In with Apple at your Developer Account and update provisioning files
 2. Add Sign In with Apple Capability to your project from Capability Library in Xcode
 
-More info with examples you can see [here](https://medium.com/@priya_talreja/sign-in-with-apple-using-swift-5cd8695a46b6).
+More info with examples you can find [here](https://medium.com/@priya_talreja/sign-in-with-apple-using-swift-5cd8695a46b6).
 
 ### Google Sign-In
 
 1. Get an OAuth client ID, used to identify your app to Google's authentication backend. You can generate it throught Google Identity page
 2. Add your OAuth client ID and custom URL scheme to Xcode project
 
-Detailed info and instructions you can see at [official Google guide](https://developers.google.com/identity/sign-in/ios/start-integrating).
+Detailed info and instructions you can find at [official Google guide](https://developers.google.com/identity/sign-in/ios/start-integrating).
+
+### VK ID
+
+1. Create new or select existing application on VK developers platform
+2. Get App ID and Secure Key, used to identify your app to VK backend. You can get it from your application settings on VK developers platform
+3. Add your App ID and Secure Key to Xcode project or add logic to load it safety from your backend 
+4. Add custom URL scheme to Xcode project
+
+Detailed info and instructions you can find at [official VK documentation](https://platform.vk.com/docs/vkid/1.35.0/about).
 
 ## Installation
 
@@ -36,13 +45,13 @@ Detailed info and instructions you can see at [official Google guide](https://de
 
 - Open your Xcode project and select `File > Add Packages...`
 - Enter repository URL `https://github.com/AdmiralBizon/ThirdPartyAuth`
-- Select branch `add-google-auth` (at the moment last version there)
+- Select branch `add-vk-auth` (at the moment last version there)
 
 ## Usage
 
 ### ThirdPartyAuth
 
-The module has a single public interface - `ThirdPartyAuthService`, included all main operations.
+This module has a single public interface - `ThirdPartyAuthService`, included all main operations.
 
 #### Configure authorization service
 
@@ -51,37 +60,81 @@ First of all, you'll need to configure shared instance of this service at the st
 ```swift
 import ThirdPartyAuth
 ...
-func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+func application(_: UIApplication,
+                 didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
      ...
     configureThirdPartyAuthService()
     return true
 }
 
 func configureThirdPartyAuthService() {
-    guard let clientID = getGoogleAuthClientID() else {
-        return
-    }
+    let vkAuthConfiguration = getVKAuthConfiguration()
+    let googleClientID = getGoogleAuthClientId()
+    let authTypes = getSupportedAuthTypes(isVKEnabled: vkAuthConfiguration != nil,
+                                          isGoogleEnabled: googleClientID != nil)
 
-    let authTypes: [ThirdPartyAuthType] = [.vk, .apple, .google]
-    ThirdPartyAuthService.sharedInstance.start(with: .init(authTypes: authTypes, googleClientID: clientID))
+    let config = ThirdPartyAuthServiceConfiguration(authTypes: authTypes,
+                                                    googleClientID: googleClientID,
+                                                    vkAuthConfiguration: vkAuthConfiguration)
+
+    ThirdPartyAuthService.sharedInstance.start(with: config)
 }
 
-func getGoogleAuthClientID() -> String? {
+func getVKAuthConfiguration() -> VKAuthConfiguration? {
+    let vkClientSecret = KeyDataProvider.vkAuthClientSecret
+
     guard
-        let path = Bundle.main.path(forResource: "Info", ofType: "plist"),
-        let resourceFileDictionary = NSDictionary(contentsOfFile: path),
-        let clientID = resourceFileDictionary.object(forKey: "CLIENT_ID") as? String
+        let propertiesList = getSignInPropertiesList(),
+        let vkClientId = propertiesList.object(forKey: "VKAppId") as? String,
+        !vkClientSecret.isEmpty
     else {
         return nil
     }
 
-    return clientID
+    return .init(clientId: vkClientId, clientSecret: vkClientSecret)
+}
+
+func getGoogleAuthClientId() -> String? {
+    guard
+        let propertiesList = getSignInPropertiesList(),
+        let googleClientId = propertiesList.object(forKey: "GoogleClientId") as? String
+    else {
+        return nil
+    }
+
+    return googleClientId
+}
+
+func getSupportedAuthTypes(isVKEnabled: Bool = false,
+                           isGoogleEnabled: Bool = false) -> [ThirdPartyAuthType] {
+    var supportedAuthTypes: [ThirdPartyAuthType] = [.apple]
+
+    if isVKEnabled {
+        supportedAuthTypes.insert(.vk, at: 0)
+    }
+
+    if isGoogleEnabled {
+        supportedAuthTypes.append(.google)
+    }
+
+    return supportedAuthTypes
+}
+
+func getSignInPropertiesList() -> NSDictionary? {
+    guard
+        let path = Bundle.main.path(forResource: "SignInProperties", ofType: "plist"),
+        let propertiesList = NSDictionary(contentsOfFile: path)
+    else {
+        return nil
+    }
+
+    return propertiesList
 }
 ```
 
-At this example we used parameter `googleClientID`, because our app supports Google Sign-In. If your app don't - you can skip additional checks and configure shared instance like this:
+In this example we made a lof of checks, cause our app supports Google Sign-In and VK ID. If your app don't - you can skip it and configure shared instance like this:
 ```swift
-let authTypes: [ThirdPartyAuthType] = [.vk, .apple]
+let authTypes: [ThirdPartyAuthType] = [.apple]
 ThirdPartyAuthService.sharedInstance.start(with: .init(authTypes: authTypes))
 ```
 
@@ -89,7 +142,13 @@ ThirdPartyAuthService.sharedInstance.start(with: .init(authTypes: authTypes))
 
 **This step can be skipped, if you're using just only Sign In with Apple.**
 
-For handle redirect into third party authentication services pages, you'll need to implement `openUrl` function at `AppDelegate` file:
+##### Google Sign-In
+
+For handle redirects by third party authentication providers, you'll need to add some logic to your delegates files.
+
+###### AppDelegate
+
+If you're using `AppDelegate` implement `openUrl` function this way:
 
 ```swift
 func application(_: UIApplication,
@@ -98,6 +157,50 @@ func application(_: UIApplication,
     return ThirdPartyAuthService.sharedInstance.canHandle(url)
 }
 ```
+
+###### SceneDelegate
+
+If you're using `SceneDelegate` implement `openURLContexts` function this way:
+
+```swift
+func scene(_: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+    guard let url = URLContexts.first?.url else {
+        return
+    }
+
+    _ = ThirdPartyAuthService.sharedInstance.canHandle(url)
+}
+```
+
+##### VK ID
+
+For this auth type you'll need to implement `openUrl` or `openURLContexts` same way as for Google Sign-In.
+
+Also only for sign in with VK ID you'll need to implement `continueUserActivity` functions.
+
+###### AppDelegate
+
+If you're using `AppDelegate` implement `continueUserActivity` function this way:
+
+```swift
+func application(_ application: UIApplication,
+                 continue userActivity: NSUserActivity,
+                 restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+    return ThirdPartyAuthService.sharedInstance.canContinue(userActivity: userActivity)
+}
+```
+
+###### SceneDelegate
+
+If you're using `SceneDelegate` implement `continueUserActivity` function this way:
+
+```swift
+func scene(_: UIScene, continue userActivity: NSUserActivity) {
+    _ = ThirdPartyAuthService.sharedInstance.canContinue(userActivity: userActivity)
+}
+```
+
+**Without it auth process won't be finished!**
 
 #### Auth process
 
@@ -123,9 +226,27 @@ To start the authorization process, you need to write the following command:
 ThirdPartyAuthService.sharedInstance.signIn(with: type)
 ```
 
-Here `type` is one of `ThirdPartyAuthService` current configuration supported types. For example, .`apple`.
+Here `type` parameter is one of `ThirdPartyAuthService` current configuration supported types. For example, `.apple`.
+
+For sign out you can use next command:
+
+```swift
+thirdPartyAuthService.signOut(with: type) { [weak self] isSignedOut in
+    guard isSignedOut else {
+        return
+    }
+
+    self?.view?.updateUI()
+}
+```
+
+Here `type` parameter is one of `ThirdPartyAuthService` current configuration supported types. For example, `.google`. 
+
+**This command can't be used for Sign In with Apple**.
 
 ### ThirdPartyAuthUI
+
+**Before start with ThirdPartyAuthUI components you'll need to set up `ThirdPartyAuthService` configuration and prepare your project for support selected auth types (add custom URL schemes, generate clienId's, clientSecret etc.)**
 
 Library has two main UI-components:
 
@@ -158,4 +279,7 @@ thirdPartyAuthButtonContainer.onAuthFinished = { [weak self] payload in
 }
 ```
 
-You can pass user data to your presenter or other app services by this closure to continue auth process or update UI.
+You can pass user data to your presenter or other app services through this closure to continue auth process or update UI.
+
+There is no special sign out button in the library. So you can use your own UI components to call the `ThirdPartyAuthService.sharedInstance.signOut` function.
+
