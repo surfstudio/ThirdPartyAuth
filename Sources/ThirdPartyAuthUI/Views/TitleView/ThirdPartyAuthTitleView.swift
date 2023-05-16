@@ -43,7 +43,7 @@ public final class ThirdPartyAuthTitleView: UIView {
 
 }
 
-// MARK: - Private Methods
+// MARK: - Appearance
 
 private extension ThirdPartyAuthTitleView {
 

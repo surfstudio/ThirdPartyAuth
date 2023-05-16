@@ -64,7 +64,7 @@ final class ThirdPartyAuthButton: UIButton {
 
 }
 
-// MARK: - Private Methods
+// MARK: - Appearance
 
 private extension ThirdPartyAuthButton {
 

@@ -6,8 +6,9 @@
 //
 
 import AuthenticationServices
+import GoogleSignIn
 
-/// Common user data model, returned by third party authorization providers
+/// Common user data model, returned by third party authorization service
 public struct ThirdPartyAuthUserModel {
 
     // MARK: - Public Properties
@@ -22,6 +23,11 @@ public struct ThirdPartyAuthUserModel {
         self.userData = AppleAuthUserModel(userIdentifier: appleIDCredential.user,
                                            identityToken: appleIDCredential.identityToken,
                                            authorizationCode: appleIDCredential.authorizationCode)
+    }
+
+    init(from googleUser: GIDGoogleUser) {
+        self.authType = .google
+        self.userData = GoogleAuthUserModel(idToken: googleUser.idToken)
     }
 
 }

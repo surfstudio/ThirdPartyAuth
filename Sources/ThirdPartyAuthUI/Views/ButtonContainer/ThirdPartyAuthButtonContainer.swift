@@ -18,17 +18,6 @@ public final class ThirdPartyAuthButtonContainer: UIView {
     // MARK: - Private Properties
 
     private let stackView = UIStackView()
-    private lazy var appleAuthButton = ThirdPartyAuthButton(authType: .apple)
-    private lazy var googleAuthButton = ThirdPartyAuthButton(authType: .google)
-    private lazy var vkAuthButton = ThirdPartyAuthButton(authType: .vk)
-
-    private var authTypes: [ThirdPartyAuthType] = []
-    private var buttonsCornerRadius: CGFloat = 12
-    private var buttonWidth: CGFloat = 56
-
-    // MARK: - Providers
-
-    private lazy var appleAuthProvider = AppleAuthProvider()
 
     // MARK: - Initialization
 
@@ -45,16 +34,23 @@ public final class ThirdPartyAuthButtonContainer: UIView {
     // MARK: - Public Methods
 
     public func configure(with model: ThirdPartyAuthButtonContainerModel) {
-        self.authTypes = model.authTypes
-        self.buttonsCornerRadius = model.buttonConfiguration.cornerRadius
-        self.buttonWidth = model.buttonConfiguration.width
+        configureAuthButtons(with: model)
+    }
 
-        fill()
+    public func stopLoading(authType: ThirdPartyAuthType) {
+        guard
+            let button = stackView.arrangedSubviews
+                .first(where: { $0.tag == authType.rawValue }) as? ThirdPartyAuthButton
+        else {
+            return
+        }
+
+        button.stopLoading()
     }
 
 }
 
-// MARK: - Private Methods
+// MARK: - Appearance
 
 private extension ThirdPartyAuthButtonContainer {
 
@@ -63,6 +59,7 @@ private extension ThirdPartyAuthButtonContainer {
 
         configureStackView()
         configureConstraints()
+        configureAuthService()
     }
 
     func configureStackView() {
@@ -82,51 +79,11 @@ private extension ThirdPartyAuthButtonContainer {
         ])
     }
 
-    func fill() {
-        stackView.clear()
-
-        authTypes.forEach { authType in
-            switch authType {
-            case .apple:
-                configureAuthButton(button: appleAuthButton, action: #selector(onAppleAuthButtonTap))
-                configureAppleAuthProvider()
-            case .google:
-                configureAuthButton(button: googleAuthButton, action: #selector(onGoogleAuthButtonTap))
-                configureGoogleAuthProvider()
-            case .vk:
-                configureAuthButton(button: vkAuthButton, action: #selector(onVKAuthButtonTap))
-                configureVKAuthProvider()
-            }
+    func configureAuthService() {
+        ThirdPartyAuthService.sharedInstance.onAuthFinished = { [weak self] payload in
+            self?.onAuthFinished?(payload)
         }
     }
-
-    func configureAuthButton(button: ThirdPartyAuthButton, action: Selector) {
-        button.cornerRadius = buttonsCornerRadius
-        button.addTarget(self, action: action, for: .touchUpInside)
-        addButtonToContainer(button)
-    }
-
-    func addButtonToContainer(_ button: ThirdPartyAuthButton) {
-        button.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            button.widthAnchor.constraint(equalToConstant: buttonWidth),
-            button.heightAnchor.constraint(equalTo: button.widthAnchor, multiplier: 1)
-        ])
-
-        button.setContentHuggingPriority(.init(1000), for: .horizontal)
-        stackView.addArrangedSubview(button)
-    }
-
-    func configureAppleAuthProvider() {
-        appleAuthProvider.onAuthFinished = { [weak self] authResult in
-            self?.appleAuthButton.stopLoading()
-            self?.onAuthFinished?(authResult)
-        }
-    }
-
-    func configureGoogleAuthProvider() {}
-
-    func configureVKAuthProvider() {}
 
 }
 
@@ -135,15 +92,50 @@ private extension ThirdPartyAuthButtonContainer {
 private extension ThirdPartyAuthButtonContainer {
 
     @objc
-    func onAppleAuthButtonTap() {
-        appleAuthButton.startLoading()
-        appleAuthProvider.performAuth()
+    func tapOnButton(_ sender: ThirdPartyAuthButton) {
+        guard
+            let authType = ThirdPartyAuthType(rawValue: sender.tag) else {
+            return
+        }
+
+        sender.startLoading()
+        ThirdPartyAuthService.sharedInstance.signIn(with: authType)
     }
 
-    @objc
-    func onGoogleAuthButtonTap() {}
+}
 
-    @objc
-    func onVKAuthButtonTap() {}
+// MARK: - Private Methods
+
+private extension ThirdPartyAuthButtonContainer {
+
+    func configureAuthButtons(with model: ThirdPartyAuthButtonContainerModel) {
+        stackView.clear()
+
+        model.authTypes.forEach { authType in
+            let authButton = generateAuthButton(for: authType,
+                                                width: model.buttonConfiguration.width,
+                                                cornerRadius: model.buttonConfiguration.cornerRadius)
+            stackView.addArrangedSubview(authButton)
+        }
+    }
+
+    func generateAuthButton(for authType: ThirdPartyAuthType,
+                            width: CGFloat,
+                            cornerRadius: CGFloat) -> ThirdPartyAuthButton {
+        let button = ThirdPartyAuthButton(authType: authType)
+        button.tag = authType.rawValue
+        button.cornerRadius = cornerRadius
+        button.addTarget(self, action: #selector(tapOnButton), for: .touchUpInside)
+
+        button.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            button.widthAnchor.constraint(equalToConstant: width),
+            button.heightAnchor.constraint(equalTo: button.widthAnchor, multiplier: 1)
+        ])
+
+        button.setContentHuggingPriority(.init(1000), for: .horizontal)
+
+        return button
+    }
 
 }

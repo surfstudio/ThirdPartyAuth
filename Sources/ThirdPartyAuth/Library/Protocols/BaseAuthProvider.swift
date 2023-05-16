@@ -8,8 +8,11 @@
 public typealias ThirdPartyAuthResult = Result<ThirdPartyAuthUserModel, Error>
 
 /// Protocol for third party authorization providers
-public protocol BaseAuthProvider {
+protocol BaseAuthProvider {
+    /// Closure, called on finish authorization process
     var onAuthFinished: ((ThirdPartyAuthResult) -> Void)? { get set }
-    func checkCredentialsState(for userID: String, _ onCheckCredentialsValid: @escaping (Bool) -> Void)
-    func performAuth()
+    /// Common method for signIn user by third party services
+    func signIn()
+    /// Common method for signOut user by third party services
+    func signOut()
 }

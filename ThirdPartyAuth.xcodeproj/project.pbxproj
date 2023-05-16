@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B2259DFF29F92313006D9B49 /* AppleAuthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2259DFE29F92313006D9B49 /* AppleAuthHandler.swift */; };
+		B2027FEA2A0A4DF90036D9A0 /* ThirdPartyAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2027FE92A0A4DF80036D9A0 /* ThirdPartyAuthService.swift */; };
+		B2027FEE2A0A4F4C0036D9A0 /* ThirdPartyAuthServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2027FED2A0A4F4C0036D9A0 /* ThirdPartyAuthServiceInterface.swift */; };
+		B2027FF02A0A512F0036D9A0 /* ThirdPartyAuthServiceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2027FEF2A0A512F0036D9A0 /* ThirdPartyAuthServiceConfiguration.swift */; };
+		B215B14529FFA92200F59065 /* GoogleAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B215B14429FFA92200F59065 /* GoogleAuthProvider.swift */; };
+		B215B14D29FFC9D800F59065 /* GoogleAuthUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B215B14C29FFC9D800F59065 /* GoogleAuthUserModel.swift */; };
+		B215B15029FFD52400F59065 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B215B14F29FFD52400F59065 /* UIApplication.swift */; };
 		B254716429F97D6600E649CF /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254716329F97D6600E649CF /* UserDataModel.swift */; };
 		B254716629F97F4900E649CF /* AppleAuthUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254716529F97F4900E649CF /* AppleAuthUserModel.swift */; };
 		B254718729F9A9B100E649CF /* ThirdPartyAuthUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B254717F29F9A9B000E649CF /* ThirdPartyAuthUI.framework */; };
@@ -32,6 +37,7 @@
 		B285D5E129F2CFEA00B86937 /* ThirdPartyAuthType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5E029F2CFEA00B86937 /* ThirdPartyAuthType.swift */; };
 		B285D5E329F2CFF300B86937 /* ThirdPartyAuthUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5E229F2CFF300B86937 /* ThirdPartyAuthUserModel.swift */; };
 		B285D5E929F2D02600B86937 /* BaseAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5E829F2D02600B86937 /* BaseAuthProvider.swift */; };
+		B2C83D6829FD900900301FE9 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = B2C83D6729FD900900301FE9 /* GoogleSignIn */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +65,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B2259DFE29F92313006D9B49 /* AppleAuthHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthHandler.swift; sourceTree = "<group>"; };
+		B2027FE92A0A4DF80036D9A0 /* ThirdPartyAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyAuthService.swift; sourceTree = "<group>"; };
+		B2027FED2A0A4F4C0036D9A0 /* ThirdPartyAuthServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyAuthServiceInterface.swift; sourceTree = "<group>"; };
+		B2027FEF2A0A512F0036D9A0 /* ThirdPartyAuthServiceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyAuthServiceConfiguration.swift; sourceTree = "<group>"; };
+		B215B14429FFA92200F59065 /* GoogleAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthProvider.swift; sourceTree = "<group>"; };
+		B215B14C29FFC9D800F59065 /* GoogleAuthUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthUserModel.swift; sourceTree = "<group>"; };
+		B215B14F29FFD52400F59065 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		B254716329F97D6600E649CF /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		B254716529F97F4900E649CF /* AppleAuthUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthUserModel.swift; sourceTree = "<group>"; };
 		B254717629F99CAF00E649CF /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -109,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2C83D6829FD900900301FE9 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +135,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B2027FEB2A0A4F200036D9A0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B2027FEC2A0A4F2C0036D9A0 /* Auth */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B2027FEC2A0A4F2C0036D9A0 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				B2027FE92A0A4DF80036D9A0 /* ThirdPartyAuthService.swift */,
+				B2027FED2A0A4F4C0036D9A0 /* ThirdPartyAuthServiceInterface.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		B215B14E29FFD51900F59065 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B215B14F29FFD52400F59065 /* UIApplication.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B254716729F996B200E649CF /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +183,7 @@
 			children = (
 				B254716A29F9974300E649CF /* Flows */,
 				B254716F29F9981C00E649CF /* Library */,
+				B2027FEB2A0A4F200036D9A0 /* Services */,
 			);
 			path = ThirdPartyAuth;
 			sourceTree = "<group>";
@@ -154,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				B254716B29F9979000E649CF /* Apple */,
+				B2C83D6529FD8F5C00301FE9 /* Google */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -161,40 +200,16 @@
 		B254716B29F9979000E649CF /* Apple */ = {
 			isa = PBXGroup;
 			children = (
-				B254716C29F997B000E649CF /* Models */,
-				B254716D29F997B500E649CF /* Providers */,
-			);
-			path = Apple;
-			sourceTree = "<group>";
-		};
-		B254716C29F997B000E649CF /* Models */ = {
-			isa = PBXGroup;
-			children = (
+				B285D5D529F2CF8400B86937 /* AppleAuthProvider.swift */,
 				B254716529F97F4900E649CF /* AppleAuthUserModel.swift */,
 			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		B254716D29F997B500E649CF /* Providers */ = {
-			isa = PBXGroup;
-			children = (
-				B254716E29F997D400E649CF /* Support */,
-				B285D5D529F2CF8400B86937 /* AppleAuthProvider.swift */,
-			);
-			path = Providers;
-			sourceTree = "<group>";
-		};
-		B254716E29F997D400E649CF /* Support */ = {
-			isa = PBXGroup;
-			children = (
-				B2259DFE29F92313006D9B49 /* AppleAuthHandler.swift */,
-			);
-			path = Support;
+			path = Apple;
 			sourceTree = "<group>";
 		};
 		B254716F29F9981C00E649CF /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				B215B14E29FFD51900F59065 /* Extensions */,
 				B254717129F9984800E649CF /* Models */,
 				B254717229F9987C00E649CF /* Protocols */,
 			);
@@ -204,6 +219,7 @@
 		B254717129F9984800E649CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B2027FEF2A0A512F0036D9A0 /* ThirdPartyAuthServiceConfiguration.swift */,
 				B285D5E029F2CFEA00B86937 /* ThirdPartyAuthType.swift */,
 				B285D5E229F2CFF300B86937 /* ThirdPartyAuthUserModel.swift */,
 			);
@@ -347,6 +363,15 @@
 			path = TitleView;
 			sourceTree = "<group>";
 		};
+		B2C83D6529FD8F5C00301FE9 /* Google */ = {
+			isa = PBXGroup;
+			children = (
+				B215B14429FFA92200F59065 /* GoogleAuthProvider.swift */,
+				B215B14C29FFC9D800F59065 /* GoogleAuthUserModel.swift */,
+			);
+			path = Google;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -421,6 +446,7 @@
 			);
 			name = ThirdPartyAuth;
 			packageProductDependencies = (
+				B2C83D6729FD900900301FE9 /* GoogleSignIn */,
 			);
 			productName = ThirdPartyAuth;
 			productReference = B285D5BA29F2CE7D00B86937 /* ThirdPartyAuth.framework */;
@@ -480,6 +506,7 @@
 			);
 			mainGroup = B285D5B029F2CE7D00B86937;
 			packageReferences = (
+				B2C83D6629FD900900301FE9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = B285D5BB29F2CE7D00B86937 /* Products */;
 			projectDirPath = "";
@@ -597,13 +624,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2259DFF29F92313006D9B49 /* AppleAuthHandler.swift in Sources */,
+				B215B15029FFD52400F59065 /* UIApplication.swift in Sources */,
+				B2027FEE2A0A4F4C0036D9A0 /* ThirdPartyAuthServiceInterface.swift in Sources */,
+				B215B14D29FFC9D800F59065 /* GoogleAuthUserModel.swift in Sources */,
 				B285D5E929F2D02600B86937 /* BaseAuthProvider.swift in Sources */,
 				B285D5E329F2CFF300B86937 /* ThirdPartyAuthUserModel.swift in Sources */,
 				B285D5E129F2CFEA00B86937 /* ThirdPartyAuthType.swift in Sources */,
 				B254716429F97D6600E649CF /* UserDataModel.swift in Sources */,
+				B215B14529FFA92200F59065 /* GoogleAuthProvider.swift in Sources */,
+				B2027FEA2A0A4DF90036D9A0 /* ThirdPartyAuthService.swift in Sources */,
 				B285D5D629F2CF8400B86937 /* AppleAuthProvider.swift in Sources */,
 				B254716629F97F4900E649CF /* AppleAuthUserModel.swift in Sources */,
+				B2027FF02A0A512F0036D9A0 /* ThirdPartyAuthServiceConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1049,6 +1081,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B2C83D6629FD900900301FE9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = exactVersion;
+				version = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B2C83D6729FD900900301FE9 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2C83D6629FD900900301FE9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B285D5B129F2CE7D00B86937 /* Project object */;
 }
