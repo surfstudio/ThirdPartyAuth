@@ -98,7 +98,16 @@ private extension GoogleAuthProvider {
         }
 
         let userModel = ThirdPartyAuthUserModel(from: user)
-        onAuthFinished?(.success(userModel))
+
+        /// Try to dismiss Google Sign-In screen (at this moment it's on top)
+        guard let signInViewController = UIApplication.topViewController() else {
+            onAuthFinished?(.success(userModel))
+            return
+        }
+
+        signInViewController.dismiss(animated: true) { [weak self] in
+            self?.onAuthFinished?(.success(userModel))
+        }
     }
 
 }

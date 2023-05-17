@@ -86,7 +86,16 @@ extension VKAuthProvider: VKIDFlowDelegate {
             }
 
             let userModel = ThirdPartyAuthUserModel(from: accessToken)
-            onAuthFinished?(.success(userModel))
+
+            /// Try to dismiss root VK ID auth controller
+            guard let signInViewController = UIApplication.topViewController()?.presentingViewController else {
+                onAuthFinished?(.success(userModel))
+                return
+            }
+
+            signInViewController.dismiss(animated: true) { [weak self] in
+                self?.onAuthFinished?(.success(userModel))
+            }
 
         } catch {
             onAuthFinished?(.failure(error))
