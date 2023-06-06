@@ -24,7 +24,7 @@ final class VKAuthProvider: NSObject, BaseAuthProvider {
 
     // MARK: - Private Properties
 
-    private(set) var sharedVK: VK.Type2<App, VKID>?
+    private var sharedVK: VK.Type2<App, VKID>?
 
     // MARK: - Methods
 
