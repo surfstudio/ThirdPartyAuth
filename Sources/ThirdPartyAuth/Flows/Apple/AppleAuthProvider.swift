@@ -44,8 +44,6 @@ final class AppleAuthProvider: NSObject, BaseAuthProvider {
         authorizationController.performRequests()
     }
 
-    func signOut() {}
-
 }
 
 // MARK: - ASAuthorizationControllerDelegate

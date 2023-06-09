@@ -7,6 +7,7 @@
 
 import AuthenticationServices
 import GoogleSignIn
+import VK
 
 /// Common user data model, returned by third party authorization service
 public struct ThirdPartyAuthUserModel {
@@ -28,6 +29,11 @@ public struct ThirdPartyAuthUserModel {
     init(from googleUser: GIDGoogleUser) {
         self.authType = .google
         self.userData = GoogleAuthUserModel(idToken: googleUser.idToken)
+    }
+
+    init(from vkIDAccessToken: VKID.AccessToken) {
+        self.authType = .vk
+        self.userData = VKAuthUserModel(accessToken: vkIDAccessToken)
     }
 
 }

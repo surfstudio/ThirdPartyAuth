@@ -8,7 +8,7 @@
 import Foundation
 import GoogleSignIn
 
-/// User data model, returned by Sing in with Apple authorization provider
+/// User data model, returned by Google Sign-In authorization provider
 public struct GoogleAuthUserModel: UserDataModel {
 
     // MARK: - Public Properties

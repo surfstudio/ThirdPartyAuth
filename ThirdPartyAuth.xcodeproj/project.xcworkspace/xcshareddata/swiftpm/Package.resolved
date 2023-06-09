@@ -35,6 +35,15 @@
         "revision" : "cee3c709307912d040bd1e06ca919875a92339c6",
         "version" : "2.0.0"
       }
+    },
+    {
+      "identity" : "vksdk-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/VKCOM/VKSDK-iOS",
+      "state" : {
+        "revision" : "bd6789232a6282ec50ce80571553f7ad973a765c",
+        "version" : "0.101.0"
+      }
     }
   ],
   "version" : 2

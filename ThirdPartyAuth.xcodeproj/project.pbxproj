@@ -38,6 +38,10 @@
 		B285D5E329F2CFF300B86937 /* ThirdPartyAuthUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5E229F2CFF300B86937 /* ThirdPartyAuthUserModel.swift */; };
 		B285D5E929F2D02600B86937 /* BaseAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285D5E829F2D02600B86937 /* BaseAuthProvider.swift */; };
 		B2C83D6829FD900900301FE9 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = B2C83D6729FD900900301FE9 /* GoogleSignIn */; };
+		B2CE71C12A10C509006C42AB /* VKAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CE71C02A10C509006C42AB /* VKAuthProvider.swift */; };
+		B2CE71C32A10C5C6006C42AB /* VKAuthConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CE71C22A10C5C6006C42AB /* VKAuthConfiguration.swift */; };
+		B2CE71C52A10E704006C42AB /* VKAuthUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CE71C42A10E704006C42AB /* VKAuthUserModel.swift */; };
+		B2DB4EAA2A0E1B8500246CE8 /* VK in Frameworks */ = {isa = PBXBuildFile; productRef = B2DB4EA92A0E1B8500246CE8 /* VK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +101,9 @@
 		B2BA853529F3CDBA00F4B915 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B2BA853629F3D01D00F4B915 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		B2BA853A29F3D91700F4B915 /* ThirdPartyAuthTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyAuthTitleView.swift; sourceTree = "<group>"; };
+		B2CE71C02A10C509006C42AB /* VKAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAuthProvider.swift; sourceTree = "<group>"; };
+		B2CE71C22A10C5C6006C42AB /* VKAuthConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAuthConfiguration.swift; sourceTree = "<group>"; };
+		B2CE71C42A10E704006C42AB /* VKAuthUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAuthUserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2C83D6829FD900900301FE9 /* GoogleSignIn in Frameworks */,
+				B2DB4EAA2A0E1B8500246CE8 /* VK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +201,7 @@
 			children = (
 				B254716B29F9979000E649CF /* Apple */,
 				B2C83D6529FD8F5C00301FE9 /* Google */,
+				B2CE71BF2A10C4F3006C42AB /* VK */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -372,6 +381,16 @@
 			path = Google;
 			sourceTree = "<group>";
 		};
+		B2CE71BF2A10C4F3006C42AB /* VK */ = {
+			isa = PBXGroup;
+			children = (
+				B2CE71C22A10C5C6006C42AB /* VKAuthConfiguration.swift */,
+				B2CE71C02A10C509006C42AB /* VKAuthProvider.swift */,
+				B2CE71C42A10E704006C42AB /* VKAuthUserModel.swift */,
+			);
+			path = VK;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -447,6 +466,7 @@
 			name = ThirdPartyAuth;
 			packageProductDependencies = (
 				B2C83D6729FD900900301FE9 /* GoogleSignIn */,
+				B2DB4EA92A0E1B8500246CE8 /* VK */,
 			);
 			productName = ThirdPartyAuth;
 			productReference = B285D5BA29F2CE7D00B86937 /* ThirdPartyAuth.framework */;
@@ -507,6 +527,7 @@
 			mainGroup = B285D5B029F2CE7D00B86937;
 			packageReferences = (
 				B2C83D6629FD900900301FE9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				B2DB4EA82A0E1B8500246CE8 /* XCRemoteSwiftPackageReference "VKSDK-iOS" */,
 			);
 			productRefGroup = B285D5BB29F2CE7D00B86937 /* Products */;
 			projectDirPath = "";
@@ -624,12 +645,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2CE71C52A10E704006C42AB /* VKAuthUserModel.swift in Sources */,
 				B215B15029FFD52400F59065 /* UIApplication.swift in Sources */,
 				B2027FEE2A0A4F4C0036D9A0 /* ThirdPartyAuthServiceInterface.swift in Sources */,
 				B215B14D29FFC9D800F59065 /* GoogleAuthUserModel.swift in Sources */,
 				B285D5E929F2D02600B86937 /* BaseAuthProvider.swift in Sources */,
+				B2CE71C12A10C509006C42AB /* VKAuthProvider.swift in Sources */,
 				B285D5E329F2CFF300B86937 /* ThirdPartyAuthUserModel.swift in Sources */,
 				B285D5E129F2CFEA00B86937 /* ThirdPartyAuthType.swift in Sources */,
+				B2CE71C32A10C5C6006C42AB /* VKAuthConfiguration.swift in Sources */,
 				B254716429F97D6600E649CF /* UserDataModel.swift in Sources */,
 				B215B14529FFA92200F59065 /* GoogleAuthProvider.swift in Sources */,
 				B2027FEA2A0A4DF90036D9A0 /* ThirdPartyAuthService.swift in Sources */,
@@ -1091,6 +1115,14 @@
 				version = 7.0.0;
 			};
 		};
+		B2DB4EA82A0E1B8500246CE8 /* XCRemoteSwiftPackageReference "VKSDK-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/VKCOM/VKSDK-iOS";
+			requirement = {
+				kind = exactVersion;
+				version = 0.101.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1098,6 +1130,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B2C83D6629FD900900301FE9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignIn;
+		};
+		B2DB4EA92A0E1B8500246CE8 /* VK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2DB4EA82A0E1B8500246CE8 /* XCRemoteSwiftPackageReference "VKSDK-iOS" */;
+			productName = VK;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

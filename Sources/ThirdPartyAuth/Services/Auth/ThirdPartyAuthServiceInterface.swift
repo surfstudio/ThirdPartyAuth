@@ -17,6 +17,8 @@ public protocol ThirdPartyAuthServiceInterface: AnyObject {
     func start(with configuration: ThirdPartyAuthServiceConfiguration)
     /// Check is any of supported third party auth providers can handle given url
     func canHandle(_ url: URL) -> Bool
+    /// Handle universal links for seamless auth (used only for VK ID Auth)
+    func canContinue(userActivity: NSUserActivity) -> Bool
     /// Check is user with given id authorized (used only for Sign In with Apple)
     func checkCredentialsState(for userID: String, _ onCheckCredentialsValid: @escaping (Bool) -> Void)
     /// Try to restore user's previous sign in (used only for Google Sign-In)
@@ -24,5 +26,5 @@ public protocol ThirdPartyAuthServiceInterface: AnyObject {
     /// Sign in with third party auth provider
     func signIn(with authType: ThirdPartyAuthType)
     /// Sign out with third party auth provider (not used for Sign In with Apple)
-    func signOut(with authType: ThirdPartyAuthType)
+    func signOut(with authType: ThirdPartyAuthType, _ onSignOutComplete: ((Bool) -> Void)?)
 }

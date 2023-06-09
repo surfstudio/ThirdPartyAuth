@@ -9,13 +9,12 @@ import Foundation
 import GoogleSignIn
 
 /// Google sign in authorization process provider
-final class GoogleAuthProvider: NSObject, BaseAuthProvider {
+final class GoogleAuthProvider: BaseAuthProvider {
 
     // MARK: - Nested Types
 
     enum GoogleAuthError: Error {
         case emptyGoogleUserData
-        case getGoogleUserIdTokenFailed
         case topViewControllerNotExist
     }
 
@@ -39,18 +38,7 @@ final class GoogleAuthProvider: NSObject, BaseAuthProvider {
 
     func restorePreviousSignIn() {
         GIDSignIn.sharedInstance.restorePreviousSignIn { [weak self] user, error in
-            if let error = error {
-                self?.onAuthFinished?(.failure(error))
-                return
-            }
-
-            guard let user = user else {
-                self?.onAuthFinished?(.failure(GoogleAuthError.emptyGoogleUserData))
-                return
-            }
-
-            let userModel = ThirdPartyAuthUserModel(from: user)
-            self?.onAuthFinished?(.success(userModel))
+            self?.handleSignInResult(user: user, error: error)
         }
     }
 
@@ -71,13 +59,15 @@ final class GoogleAuthProvider: NSObject, BaseAuthProvider {
                 return
             }
 
-            // Get user's ID token
             self?.refreshUserToken(with: signInResult)
         }
     }
 
-    func signOut() {
+    func signOut(_ onSignOutComplete: ((Bool) -> Void)?) {
         GIDSignIn.sharedInstance.signOut()
+
+        let isSignedOut = GIDSignIn.sharedInstance.currentUser == nil
+        onSignOutComplete?(isSignedOut)
     }
 
 }
@@ -92,17 +82,30 @@ private extension GoogleAuthProvider {
 
     func refreshUserToken(with signInResult: GIDSignInResult) {
         signInResult.user.refreshTokensIfNeeded { [weak self] user, error in
-            guard error == nil else {
-                self?.onAuthFinished?(.failure(GoogleAuthError.getGoogleUserIdTokenFailed))
-                return
-            }
+            self?.handleSignInResult(user: user, error: error)
+        }
+    }
 
-            guard let user = user else {
-                self?.onAuthFinished?(.failure(GoogleAuthError.emptyGoogleUserData))
-                return
-            }
+    func handleSignInResult(user: GIDGoogleUser?, error: Error?) {
+        if let error = error {
+            onAuthFinished?(.failure(error))
+            return
+        }
 
-            let userModel = ThirdPartyAuthUserModel(from: user)
+        guard let user = user else {
+            onAuthFinished?(.failure(GoogleAuthError.emptyGoogleUserData))
+            return
+        }
+
+        let userModel = ThirdPartyAuthUserModel(from: user)
+
+        /// Try to dismiss Google Sign-In screen (at this moment it's on top)
+        guard let signInViewController = UIApplication.topViewController() else {
+            onAuthFinished?(.success(userModel))
+            return
+        }
+
+        signInViewController.dismiss(animated: true) { [weak self] in
             self?.onAuthFinished?(.success(userModel))
         }
     }
