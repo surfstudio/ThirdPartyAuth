@@ -15,6 +15,10 @@ enum Colors {
         static let normalBackground = Styles.Colors.Buttons.normalBackground.color
     }
 
+    enum Icons {
+        static let primary = Styles.Colors.Icons.primary.color
+    }
+
     enum Loader {
         static let tint = Styles.Colors.Loader.tint.color
     }
