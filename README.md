@@ -15,6 +15,7 @@ Library for quick register or login into your application using third party acco
 ## Prepare your app project
 
 Before using this library you'll need to check, is your project matches all needed auth types requirements.
+
 Detailed info you can find [here](TechDocs/PrepareProject.md).
 
 ## Installation
@@ -30,8 +31,6 @@ Detailed info you can find [here](TechDocs/PrepareProject.md).
 ### ThirdPartyAuth
 
 This module has a single public interface - `ThirdPartyAuthService`, included all main operations.
-
-#### Auth process
 
 Sign In:
 
@@ -60,6 +59,19 @@ Library has two main UI-components:
 - Title view of third party auth section
 - Button container - main component of ThirdPartyAuthUI, included block with auth buttons of all needed auth types
 
- <img src="TechDocs/Modules/lightModeAppearance.png" width="300">&nbsp;&nbsp;&nbsp;&nbsp;<img src="TechDocs/Modules/lightModeAppearance.png" width="300">
-
 Detailed usage info of this module you can find [here](TechDocs/Modules/ThirdPartyAuthUI.md).
+
+<details>
+    <summary>Preview</summary>
+    <p align="center">
+         <img src="TechDocs/Modules/lightModeAppearance.png" width="250" height="540">&nbsp;&nbsp;&nbsp;&nbsp;<img src="TechDocs/Modules/darkModeAppearance.png" width="250" height="540">
+    </p>
+</details>
+
+## Changelog
+
+The full list of changes can be found in [this file](./CHANGELOG.md).
+
+## License
+
+[MIT License](./LICENSE)
