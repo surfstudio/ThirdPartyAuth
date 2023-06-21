@@ -103,7 +103,8 @@ private extension ThirdPartyAuthButton {
     func setImage() {
         switch authType {
         case .apple:
-            setImageForAllState(Styles.Images.Icons.apple.image, alpha: Constants.imageAlpha)
+            setImageForAllState(Styles.Images.Icons.apple.image.withTintColor(Colors.Icons.primary),
+                                alpha: Constants.imageAlpha)
         case .google:
             setImageForAllState(Styles.Images.Icons.google.image, alpha: Constants.imageAlpha)
         case .vk:

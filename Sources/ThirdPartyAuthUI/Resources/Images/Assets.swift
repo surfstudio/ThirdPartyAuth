@@ -27,6 +27,9 @@ internal enum Styles {
       internal static let highlightedBackground = ColorAsset(name: "Buttons/highlightedBackground")
       internal static let normalBackground = ColorAsset(name: "Buttons/normalBackground")
     }
+    internal enum Icons {
+      internal static let primary = ColorAsset(name: "Icons/primary")
+    }
     internal enum Loader {
       internal static let tint = ColorAsset(name: "Loader/tint")
     }
