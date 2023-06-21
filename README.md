@@ -1,10 +1,14 @@
 # ThirdPartyAuth
 
+![ThirdPartyAuthLogo](TechDocs/thirdPartyAuthLogo.png)
+
 ## About
 
 Library for quick register or login into your application using third party accounts. It has two main modules - **ThirdPartyAuth** and **ThirdPartyAuthUI**.
 - **ThirdPartyAuth** module include components for auth / register user's in your app with their third party accounts. After getting response from this module you'll need to sent all necessary data to your backend-side and process them there.
 - **ThirdPartyAuthUI** is a set of components that you can integrate into your app, if you don't need custom UI. 
+
+![ThirdPartyAuthPreview](TechDocs/thirdPartyAuthPreview.png)
 
 ## Features
 
