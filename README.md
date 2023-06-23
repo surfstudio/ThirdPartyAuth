@@ -1,6 +1,10 @@
 # ThirdPartyAuth
 
-![ThirdPartyAuthLogo](TechDocs/thirdPartyAuthLogo.png)
+[![Build Status](https://github.com/surfstudio/ThirdPartyAuth/actions/workflows/main.yml/badge.svg)](https://github.com/surfstudio/ThirdPartyAuth/actions/workflows/main.yml)
+[![SPM Compatible](https://img.shields.io/badge/SPM-compatible-blue.svg)](https://github.com/apple/swift-package-manager)
+[![Version](https://img.shields.io/github/release/surfstudio/ThirdPartyAuth.svg?style=flat)]()
+
+![ThirdPartyAuth Logo Image](TechDocs/thirdPartyAuthLogo.png)
 
 ## About
 
@@ -8,7 +12,7 @@ Library for quick register or login into your application using third party acco
 - **ThirdPartyAuth** module include components for auth / register user's in your app with their third party accounts. After getting response from this module you'll need to sent all necessary data to your backend-side and process them there.
 - **ThirdPartyAuthUI** is a set of components that you can integrate into your app, if you don't need custom UI. 
 
-![ThirdPartyAuthPreview](TechDocs/thirdPartyAuthPreview.png)
+![ThirdPartyAuth Preview Image](TechDocs/thirdPartyAuthPreview.png)
 
 ## Features
 
