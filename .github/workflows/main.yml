@@ -1,0 +1,27 @@
+name: CI
+
+# Controls when the action will run. 
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - '**'
+    types: [ opened, edited, synchronize ]
+
+jobs:
+  build:
+    name: Build and Test project
+    runs-on: macos-13
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Build
+        run: |
+            # Check only for ThirdPartyAuthUI scheme, because it also import ThirdPartyAuth module
+            xcodebuild clean build -scheme ThirdPartyAuthUI -destination "platform=iOS Simulator,name=iPhone 14"
+      - name: Test
+        run: |
+            xcodebuild test -scheme ThirdPartyAuth -destination "platform=iOS Simulator,name=iPhone 14"
+            xcodebuild test -scheme ThirdPartyAuthUI -destination "platform=iOS Simulator,name=iPhone 14"
