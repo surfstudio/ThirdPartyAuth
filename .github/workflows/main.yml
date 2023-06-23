@@ -1,4 +1,4 @@
-name: CI
+name: build
 
 # Controls when the action will run. 
 on:
@@ -8,7 +8,7 @@ on:
   pull_request:
     branches:
       - '**'
-    types: [ opened, edited, synchronize ]
+    types: [ opened, edited, synchronize, reopened ]
 
 jobs:
   build:
@@ -17,6 +17,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Force xcode 14.3.1
+        run: |
+          sudo xcode-select -switch /Applications/Xcode_14.3.1.app
       - name: Build
         run: |
             # Check only for ThirdPartyAuthUI scheme, because it also import ThirdPartyAuth module
